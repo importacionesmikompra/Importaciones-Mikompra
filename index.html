@@ -32,6 +32,20 @@
         .animate-bounce-slow {
             animation: bounce-slow 3s infinite;
         }
+        /* Estilos para el acordeón de FAQ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .5s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
     </style>
     <script>
         tailwind.config = {
@@ -70,6 +84,7 @@
                     <a href="#inicio" class="text-gray-600 hover:text-brand-blue transition font-medium" data-translate="nav_home">Inicio</a>
                     <a href="#servicios" class="text-gray-600 hover:text-brand-blue transition font-medium" data-translate="nav_services">Servicios</a>
                     <a href="#calculadora" class="text-gray-600 hover:text-brand-blue transition font-medium" data-translate="nav_calc">Calculadora</a>
+                    <a href="#faq" class="text-gray-600 hover:text-brand-blue transition font-medium" data-translate="nav_faq">Preguntas</a>
                     <a href="#contacto" class="bg-brand-orange text-white px-5 py-2 rounded-full hover:bg-orange-600 transition font-medium shadow-md" data-translate="nav_contact">Contáctanos</a>
                     
                     <!-- Botón Cambio de Idioma (Desktop) -->
@@ -97,6 +112,7 @@
             <a href="#inicio" class="block px-4 py-3 text-gray-600 hover:bg-gray-100" data-translate="nav_home">Inicio</a>
             <a href="#servicios" class="block px-4 py-3 text-gray-600 hover:bg-gray-100" data-translate="nav_services">Servicios</a>
             <a href="#calculadora" class="block px-4 py-3 text-gray-600 hover:bg-gray-100" data-translate="nav_calc">Calculadora</a>
+            <a href="#faq" class="block px-4 py-3 text-gray-600 hover:bg-gray-100" data-translate="nav_faq">Preguntas</a>
             <a href="#contacto" class="block px-4 py-3 text-brand-orange font-bold hover:bg-gray-100" data-translate="nav_contact">Contáctanos</a>
         </div>
     </nav>
@@ -199,6 +215,137 @@
                     <p class="text-4xl font-bold text-brand-blue" id="cost-display">$0.00</p>
                     <p class="text-xs text-gray-500 mt-2" data-translate="calc_disclaimer">*Tarifas sujetas a cambios y dimensiones del paquete.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS (NUEVA SECCIÓN) -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-blue mb-4" data-translate="testim_title">Lo que dicen nuestros clientes</h2>
+                <div class="w-24 h-1 bg-brand-orange mx-auto rounded"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic" data-translate="testim_1_text">"Excelente servicio, traje todos los repuestos para mi taller desde Miami y el envío marítimo fue súper económico. Recomendados."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-white font-bold">CR</div>
+                        <div>
+                            <p class="font-bold text-sm">Carlos Ruiz</p>
+                            <p class="text-xs text-gray-500">Managua</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic" data-translate="testim_2_text">"Me encanta que me traen mis paquetes hasta la puerta de mi casa en Granada. El servicio aéreo es muy rápido."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold">MG</div>
+                        <div>
+                            <p class="font-bold text-sm">Maria González</p>
+                            <p class="text-xs text-gray-500">Granada</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonio 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic" data-translate="testim_3_text">"Primera vez que importo y me guiaron en todo el proceso. Muy amables y profesionales. Sin duda volveré a usar Mikompra."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-white font-bold">JL</div>
+                        <div>
+                            <p class="font-bold text-sm">Jorge López</p>
+                            <p class="text-xs text-gray-500">Estelí</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-brand-blue mb-12" data-translate="faq_title">Preguntas Frecuentes</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 (Tiempos) -->
+                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
+                    <summary class="flex justify-between items-center font-bold text-gray-800">
+                        <span data-translate="faq_q1">¿Cuáles son los tiempos de entrega?</span>
+                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a1">
+                        <strong>Aéreo:</strong> 1 a 3 días hábiles una vez recibido en Miami.<br>
+                        <strong>Marítimo:</strong> 15 a 18 días hábiles una vez recibido en Miami.
+                    </p>
+                </details>
+                
+                <!-- FAQ Item 2 -->
+                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
+                    <summary class="flex justify-between items-center font-bold text-gray-800">
+                        <span data-translate="faq_q2">¿Cobran impuestos de aduana?</span>
+                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a2">
+                        Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales. Sin embargo, artículos de alto valor o cantidades comerciales pueden requerir pagos adicionales. Contáctanos para cotizar artículos especiales.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
+                    <summary class="flex justify-between items-center font-bold text-gray-800">
+                        <span data-translate="faq_q3">¿Qué artículos NO puedo enviar? (Restringidos)</span>
+                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a3">
+                        No enviamos: Drones, vapes, cigarros, licor, armas de fuego, municiones, explosivos, ni armas cortopunzantes como cuchillos. Si tienes dudas sobre un producto, consúltanos antes de comprar.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
+                    <summary class="flex justify-between items-center font-bold text-gray-800">
+                        <span data-translate="faq_q4">¿Cómo obtengo mi dirección en Miami?</span>
+                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a4">
+                        Es muy fácil y gratis. Solo escríbenos a nuestro WhatsApp o presiona el botón "Contáctanos" y te daremos tu código de casillero único para que empieces a comprar hoy mismo.
+                    </p>
+                </details>
+
+                <!-- FAQ Item 5 (Compra Asistida) -->
+                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
+                    <summary class="flex justify-between items-center font-bold text-gray-800">
+                        <span data-translate="faq_q5">¿Ofrecen servicio de compra por mí? (Gratis)</span>
+                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a5">
+                        ¡Sí! Ofrecemos la opción de realizar la compra por ti totalmente <strong>GRATIS</strong>. Solo envíanos el enlace del producto y nosotros nos encargamos del resto.
+                    </p>
+                </details>
+
+                 <!-- FAQ Item 6 (Métodos de Pago) -->
+                 <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
+                    <summary class="flex justify-between items-center font-bold text-gray-800">
+                        <span data-translate="faq_q6">¿Qué métodos de pago aceptan?</span>
+                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a6">
+                        Aceptamos pagos con tarjetas de crédito y débito (Visa y Mastercard), depósitos y transferencias a cuentas BAC, Lafise, Banpro, Ficohsa y también Billetera Móvil.
+                    </p>
+                </details>
             </div>
         </div>
     </section>
@@ -368,6 +515,7 @@
                 nav_home: "Inicio",
                 nav_services: "Servicios",
                 nav_calc: "Calculadora",
+                nav_faq: "Preguntas",
                 nav_contact: "Contáctanos",
                 hero_title: "Traemos tus compras de USA <br> directo a Nicaragua",
                 hero_subtitle: "Rápido, seguro y con las mejores tarifas del mercado. Aéreo y Marítimo.",
@@ -397,6 +545,23 @@
                 calc_btn: "Calcular Costo",
                 calc_result_label: "Costo Estimado:",
                 calc_disclaimer: "*Tarifas sujetas a cambios y dimensiones del paquete.",
+                testim_title: "Lo que dicen nuestros clientes",
+                testim_1_text: "\"Excelente servicio, traje todos los repuestos para mi taller desde Miami y el envío marítimo fue súper económico. Recomendados.\"",
+                testim_2_text: "\"Me encanta que me traen mis paquetes hasta la puerta de mi casa en Granada. El servicio aéreo es muy rápido.\"",
+                testim_3_text: "\"Primera vez que importo y me guiaron en todo el proceso. Muy amables y profesionales. Sin duda volveré a usar Mikompra.\"",
+                faq_title: "Preguntas Frecuentes",
+                faq_q1: "¿Cuáles son los tiempos de entrega?",
+                faq_a1: "<strong>Aéreo:</strong> 1 a 3 días hábiles una vez recibido en Miami.<br><strong>Marítimo:</strong> 15 a 18 días hábiles una vez recibido en Miami.",
+                faq_q2: "¿Cobran impuestos de aduana?",
+                faq_a2: "Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales. Sin embargo, artículos de alto valor o cantidades comerciales pueden requerir pagos adicionales. Contáctanos para cotizar artículos especiales.",
+                faq_q3: "¿Qué artículos NO puedo enviar? (Restringidos)",
+                faq_a3: "No enviamos: Drones, vapes, cigarros, licor, armas de fuego, municiones, explosivos, ni armas cortopunzantes como cuchillos. Si tienes dudas sobre un producto, consúltanos antes de comprar.",
+                faq_q4: "¿Cómo obtengo mi dirección en Miami?",
+                faq_a4: "Es muy fácil y gratis. Solo escríbenos a nuestro WhatsApp o presiona el botón \"Contáctanos\" y te daremos tu código de casillero único para que empieces a comprar hoy mismo.",
+                faq_q5: "¿Ofrecen servicio de compra por mí? (Gratis)",
+                faq_a5: "¡Sí! Ofrecemos la opción de realizar la compra por ti totalmente <strong>GRATIS</strong>. Solo envíanos el enlace del producto y nosotros nos encargamos del resto.",
+                faq_q6: "¿Qué métodos de pago aceptan?",
+                faq_a6: "Aceptamos pagos con tarjetas de crédito y débito (Visa y Mastercard), depósitos y transferencias a cuentas BAC, Lafise, Banpro, Ficohsa y también Billetera Móvil.",
                 steps_title: "¿Cómo importar con nosotros?",
                 step1_title: "Regístrate",
                 step1_desc: "Contáctanos para obtener tu dirección de casillero gratis en USA.",
@@ -423,6 +588,7 @@
                 nav_home: "Home",
                 nav_services: "Services",
                 nav_calc: "Calculator",
+                nav_faq: "FAQ",
                 nav_contact: "Contact Us",
                 hero_title: "We bring your USA purchases <br> straight to Nicaragua",
                 hero_subtitle: "Fast, secure, and with the best rates in the market. Air and Sea.",
@@ -452,6 +618,23 @@
                 calc_btn: "Calculate Cost",
                 calc_result_label: "Estimated Cost:",
                 calc_disclaimer: "*Rates subject to change and package dimensions.",
+                testim_title: "What Our Customers Say",
+                testim_1_text: "\"Excellent service, I brought all the spare parts for my workshop from Miami and sea shipping was super affordable. Highly recommended.\"",
+                testim_2_text: "\"I love that they bring my packages right to my door in Granada. Air shipping is very fast.\"",
+                testim_3_text: "\"First time importing and they guided me through the whole process. Very kind and professional. I will definitely use Mikompra again.\"",
+                faq_title: "Frequently Asked Questions",
+                faq_q1: "What are the shipping times?",
+                faq_a1: "<strong>Air:</strong> 1 to 3 business days after receiving in Miami.<br><strong>Sea:</strong> 15 to 18 business days after receiving in Miami.",
+                faq_q2: "Do you charge customs taxes?",
+                faq_a2: "Our rate per pound already includes customs handling for most personal items. However, high-value items or commercial quantities may require additional payments. Contact us for special quotes.",
+                faq_q3: "What items can I NOT send? (Restricted)",
+                faq_a3: "We do not ship: Drones, vapes, cigarettes, liquor, firearms, ammunition, explosives, or bladed weapons like knives. If you have doubts about a product, ask us before buying.",
+                faq_q4: "How do I get my Miami address?",
+                faq_a4: "It's very easy and free. Just write to us on WhatsApp or press the 'Contact Us' button and we'll give you your unique locker code to start shopping today.",
+                faq_q5: "Do you offer assisted purchase service? (Free)",
+                faq_a5: "Yes! We offer the option to make the purchase for you completely <strong>FREE</strong>. Just send us the product link and we'll take care of the rest.",
+                faq_q6: "What payment methods do you accept?",
+                faq_a6: "We accept credit and debit cards (Visa and Mastercard), bank deposits and transfers to BAC, Lafise, Banpro, Ficohsa accounts, and also Billetera Móvil.",
                 steps_title: "How to import with us?",
                 step1_title: "Register",
                 step1_desc: "Contact us to get your free USA locker address.",
