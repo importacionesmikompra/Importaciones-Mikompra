@@ -9,46 +9,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
+        body { font-family: 'Poppins', sans-serif; }
         .hero-bg {
-            /* Fondo azul oscuro profesional para resaltar el texto blanco */
             background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
         }
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
+        .smooth-scroll { scroll-behavior: smooth; }
+        
         /* Animación para la burbuja de chat */
         @keyframes bounce-slow {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
-        .animate-bounce-slow {
-            animation: bounce-slow 3s infinite;
-        }
+        .animate-bounce-slow { animation: bounce-slow 3s infinite; }
+
         /* Estilos para el acordeón de FAQ */
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-        details[open] summary ~ * {
-            animation: sweep .5s ease-in-out;
-        }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
         @keyframes sweep {
             0%    {opacity: 0; transform: translateY(-10px)}
             100%  {opacity: 1; transform: translateY(0)}
         }
+
         /* Estilos específicos del banner navideño */
         .christmas-banner {
             background-color: #A32A29; /* Rojo oscuro navideño */
             color: white;
             padding: 1rem 0;
-            z-index: 55; /* Más alto que la navegación para que se vea bien */
+            z-index: 55;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .christmas-tree {
@@ -56,6 +46,13 @@
             font-size: 1.5rem;
             margin-right: 0.5rem;
         }
+
+        /* Animación para agregar items a la lista */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .item-added { animation: fadeIn 0.3s ease-out; }
     </style>
     <script>
         tailwind.config = {
@@ -63,10 +60,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            // Colores extraídos de tu logo
-                            blue: '#003366', // Azul oscuro del texto
-                            light: '#00BFFF', // Celeste/Cyan del icono
-                            orange: '#FF6600', // Naranja de la K
+                            blue: '#003366', 
+                            light: '#00BFFF', 
+                            orange: '#FF6600', 
                         }
                     }
                 }
@@ -89,8 +85,8 @@
             </p>
         </div>
     </div>
-    
-    <nav id="main-nav" class="bg-white shadow-md fixed w-full z-50"> 
+
+    <nav id="main-nav" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
@@ -119,7 +115,6 @@
                         <span id="lang-icon-mobile" class="text-lg">🇺🇸</span>
                         <span id="lang-text-mobile" class="text-xs font-bold text-gray-600">EN</span>
                     </button>
-                    
                     <button id="mobile-menu-button" class="text-gray-600 hover:text-brand-blue focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
@@ -134,8 +129,8 @@
             <a href="#contacto" class="block px-4 py-3 text-brand-orange font-bold hover:bg-gray-100" data-translate="nav_contact">Contáctanos</a>
         </div>
     </nav>
-    
-    <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-20">
+
+    <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-20 transition-all duration-300">
         <div class="max-w-4xl mx-auto text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-translate="hero_title">Traemos tus compras de USA <br> directo a Nicaragua</h1>
             <p class="text-xl md:text-2xl mb-8 text-gray-200" data-translate="hero_subtitle">Rápido, seguro y con las mejores tarifas del mercado. Aéreo y Marítimo.</p>
@@ -153,35 +148,22 @@
     <section class="py-12 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="stats-container">
-                
                 <div>
-                    <p class="text-5xl font-extrabold text-brand-blue mb-2">
-                        <span class="counter" data-target="3000">0</span>+
-                    </p>
+                    <p class="text-5xl font-extrabold text-brand-blue mb-2"><span class="counter" data-target="3000">0</span>+</p>
                     <p class="text-gray-600 font-medium" data-translate="stat_1_desc">Paquetes Entregados</p>
                 </div>
-                
                 <div>
-                    <p class="text-5xl font-extrabold text-brand-blue mb-2">
-                        <span class="counter" data-target="5">0</span>
-                    </p>
+                    <p class="text-5xl font-extrabold text-brand-blue mb-2"><span class="counter" data-target="5">0</span></p>
                     <p class="text-gray-600 font-medium" data-translate="stat_2_desc">Años de Experiencia</p>
                 </div>
-
                 <div>
-                    <p class="text-5xl font-extrabold text-brand-blue mb-2">
-                        <span class="counter" data-target="15">0</span>
-                    </p>
+                    <p class="text-5xl font-extrabold text-brand-blue mb-2"><span class="counter" data-target="15">0</span></p>
                     <p class="text-gray-600 font-medium" data-translate="stat_3_desc">Departamentos de Nicaragua</p>
                 </div>
-                
                 <div>
-                    <p class="text-5xl font-extrabold text-brand-blue mb-2">
-                        $<span class="counter" data-target="100">0</span>K+
-                    </p>
+                    <p class="text-5xl font-extrabold text-brand-blue mb-2">$<span class="counter" data-target="100">0</span>K+</p>
                     <p class="text-gray-600 font-medium" data-translate="stat_4_desc">En Compras Asistidas</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -247,24 +229,71 @@
             </div>
 
             <div class="bg-white rounded-xl shadow-2xl p-6 md:p-10 text-gray-800">
+                
+                <div class="mb-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
+                    <label class="block text-sm font-bold mb-2 text-brand-blue" data-translate="calc_helper_label">Arma tu paquete (Selecciona producto y cantidad):</label>
+                    
+                    <div class="flex flex-col md:flex-row gap-2 mb-3">
+                        <select id="item-estimator" class="flex-[2] p-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-brand-blue">
+                            <option value="" selected disabled>-- Selecciona un artículo --</option>
+                            <optgroup label="Ropa / Clothing (Shein/Amazon)">
+                                <option value="0.5" data-name="Camiseta / Top">Camiseta / Top (0.5 lb)</option>
+                                <option value="1.5" data-name="Jeans / Pantalón">Jeans / Pantalón (1.5 lb)</option>
+                                <option value="0.8" data-name="Vestido / Dress">Vestido / Dress (0.8 lb)</option>
+                                <option value="0.3" data-name="Ropa Interior">Ropa Interior (0.3 lb)</option>
+                                <option value="2.0" data-name="Chaqueta / Jacket">Chaqueta / Jacket (2.0 lb)</option>
+                            </optgroup>
+                            <optgroup label="Accesorios / Accessories">
+                                <option value="0.2" data-name="Case de Celular">Case de Celular (0.2 lb)</option>
+                                <option value="0.5" data-name="Cartera Pequeña">Cartera Pequeña (0.5 lb)</option>
+                                <option value="1.0" data-name="Bolso / Cartera">Bolso / Cartera (1.0 lb)</option>
+                                <option value="0.3" data-name="Joyería / Bisutería">Joyería / Bisutería (0.3 lb)</option>
+                            </optgroup>
+                            <optgroup label="Calzado / Footwear">
+                                <option value="2.5" data-name="Tenis / Sneakers">Tenis / Sneakers (2.5 lb)</option>
+                                <option value="1.5" data-name="Sandalias">Sandalias (1.5 lb)</option>
+                                <option value="4.0" data-name="Botas">Botas (4.0 lb)</option>
+                            </optgroup>
+                            <optgroup label="Tecnología / Tech">
+                                <option value="1.0" data-name="Celular">Celular / Phone (1.0 lb)</option>
+                                <option value="2.0" data-name="Tablet">Tablet / iPad (2.0 lb)</option>
+                                <option value="6.0" data-name="Laptop">Laptop (6.0 lb)</option>
+                            </optgroup>
+                        </select>
+
+                        <div class="w-full md:w-24">
+                            <input type="number" id="item-quantity" value="1" min="1" class="w-full p-2 border border-gray-300 rounded-lg text-sm text-center focus:outline-none focus:border-brand-blue" placeholder="Cant.">
+                        </div>
+
+                        <button onclick="addItemToList()" class="bg-brand-orange text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600 transition flex items-center justify-center shadow-sm">
+                            <i class="fa-solid fa-plus mr-1"></i> Agregar
+                        </button>
+                    </div>
+
+                    <div id="items-list-container" class="hidden">
+                        <p class="text-xs text-gray-500 mb-2 font-bold uppercase tracking-wide">Tus Artículos Seleccionados:</p>
+                        <ul id="items-list" class="space-y-2 mb-3 max-h-40 overflow-y-auto">
+                            </ul>
+                        <div class="flex justify-between items-center border-t border-gray-200 pt-2">
+                            <button onclick="clearItemsList()" class="text-xs text-red-500 hover:text-red-700 underline">Borrar todo</button>
+                            <p class="text-sm font-bold text-brand-blue">Total Peso: <span id="total-weight-display">0.0</span> lb</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-bold mb-2" data-translate="calc_label_weight">Peso en Libras (lb)</label>
-                        <input type="number" id="weight" placeholder="Ej: 5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-blue" min="1">
+                        <label class="block text-sm font-bold mb-2" data-translate="calc_label_weight">Peso Total (lb)</label>
+                        <input type="number" id="weight" step="0.1" placeholder="Ej: 5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-blue font-bold bg-white" min="0.1" oninput="calculateShipping()">
                     </div>
                     <div>
                         <label class="block text-sm font-bold mb-2" data-translate="calc_label_method">Método de Envío</label>
-                        <select id="method" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-blue">
-                            <option value="air" data-translate="calc_opt_air">Aéreo ($7.00/lb)</option> 
+                        <select id="method" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-blue" onchange="calculateShipping()">
+                            <option value="air" data-translate="calc_opt_air">Aéreo ($7.00/lb)</option>
                             <option value="sea" data-translate="calc_opt_sea">Marítimo ($2.50/lb)</option>
                         </select>
                     </div>
                 </div>
                 
-                <button onclick="calculateShipping()" class="w-full mt-6 bg-brand-orange text-white font-bold py-4 rounded-lg hover:bg-orange-600 transition shadow-md" data-translate="calc_btn">
-                    Calcular Costo
-                </button>
-
                 <div id="result" class="hidden mt-8 p-4 bg-gray-100 rounded-lg border-l-4 border-brand-blue text-center">
                     <p class="text-gray-600" data-translate="calc_result_label">Costo Estimado:</p>
                     <p class="text-4xl font-bold text-brand-blue" id="cost-display">$0.00</p>
@@ -340,17 +369,15 @@
                         <strong>Marítimo:</strong> 15 a 18 días hábiles una vez recibido en Miami.
                     </p>
                 </details>
-                
                 <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
                     <summary class="flex justify-between items-center font-bold text-gray-800">
                         <span data-translate="faq_q2">¿Cobran impuestos de aduana?</span>
                         <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
                     </summary>
                     <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a2">
-                        Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales. Sin embargo, artículos de alto valor o cantidades comerciales pueden requerir pagos adicionales. Contáctanos para cotizar artículos especiales.
+                        Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales. Sin embargo, artículos de alto valor o cantidades comerciales pueden requerir pagos adicionales.
                     </p>
                 </details>
-
                 <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
                     <summary class="flex justify-between items-center font-bold text-gray-800">
                         <span data-translate="faq_q3">¿Qué artículos NO puedo enviar? (Restringidos)</span>
@@ -360,7 +387,6 @@
                         No enviamos: Drones, vapes, cigarros, licor, armas de fuego, municiones, explosivos, ni armas cortopunzantes como cuchillos. Si tienes dudas sobre un producto, consúltanos antes de comprar.
                     </p>
                 </details>
-
                 <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
                     <summary class="flex justify-between items-center font-bold text-gray-800">
                         <span data-translate="faq_q4">¿Cómo obtengo mi dirección en Miami?</span>
@@ -368,26 +394,6 @@
                     </summary>
                     <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a4">
                         Es muy fácil y gratis. Solo escríbenos a nuestro WhatsApp o presiona el botón "Contáctanos" y te daremos tu código de casillero único para que empieces a comprar hoy mismo.
-                    </p>
-                </details>
-
-                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
-                    <summary class="flex justify-between items-center font-bold text-gray-800">
-                        <span data-translate="faq_q5">¿Ofrecen servicio de compra por mí? (Gratis)</span>
-                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a5">
-                        ¡Sí! Ofrecemos la opción de realizar la compra por ti totalmente <strong>GRATIS</strong>. Solo envíanos el enlace del producto y nosotros nos encargamos del resto.
-                    </p>
-                </details>
-
-                 <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
-                    <summary class="flex justify-between items-center font-bold text-gray-800">
-                        <span data-translate="faq_q6">¿Qué métodos de pago aceptan?</span>
-                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a6">
-                        Aceptamos pagos con tarjetas de crédito y débito (Visa y Mastercard), depósitos y transferencias a cuentas BAC, Lafise, Banpro, Ficohsa y también Billetera Móvil.
                     </p>
                 </details>
             </div>
@@ -400,22 +406,22 @@
             
             <div class="grid md:grid-cols-4 gap-8 text-center">
                 <div class="relative">
-                    <div class="w-20 h-20 bg-brand-light text-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold border-2 border-brand-light">1</div>
+                    <div class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-brand-orange text-3xl font-bold border-2 border-brand-orange">1</div>
                     <h3 class="font-bold text-xl mb-2" data-translate="step1_title">Regístrate</h3>
                     <p class="text-gray-600 text-sm" data-translate="step1_desc">Contáctanos para obtener tu dirección de casillero gratis en USA.</p>
                 </div>
                 <div class="relative">
-                    <div class="w-20 h-20 bg-brand-light text-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold border-2 border-brand-light">2</div>
+                    <div class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-brand-orange text-3xl font-bold border-2 border-brand-orange">2</div>
                     <h3 class="font-bold text-xl mb-2" data-translate="step2_title">Compra</h3>
                     <p class="text-gray-600 text-sm" data-translate="step2_desc">Haz tus compras en Amazon, eBay o tu tienda favorita y envíalas a tu casillero.</p>
                 </div>
                 <div class="relative">
-                    <div class="w-20 h-20 bg-brand-light text-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold border-2 border-brand-light">3</div>
+                    <div class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-brand-orange text-3xl font-bold border-2 border-brand-orange">3</div>
                     <h3 class="font-bold text-xl mb-2" data-translate="step3_title">Notifica</h3>
                     <p class="text-gray-600 text-sm" data-translate="step3_desc">Envíanos tu factura y número de rastreo para procesar tu paquete.</p>
                 </div>
                 <div class="relative">
-                    <div class="w-20 h-20 bg-brand-light text-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-3xl font-bold border-2 border-brand-light">4</div>
+                    <div class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-brand-orange text-3xl font-bold border-2 border-brand-orange">4</div>
                     <h3 class="font-bold text-xl mb-2" data-translate="step4_title">Recibe</h3>
                     <p class="text-gray-600 text-sm" data-translate="step4_desc">Recibe tus productos en nuestras oficinas en Nicaragua o a domicilio.</p>
                 </div>
@@ -423,7 +429,7 @@
         </div>
     </section>
 
-    <section class="py-16 bg-gray-100">
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-brand-blue mb-10" data-translate="map_title">Nuestra Ubicación</h2>
             <div class="rounded-xl overflow-hidden shadow-2xl h-80">
@@ -446,7 +452,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center mb-6">
-                         <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=T9evMkn5xqQQ7kNvwHvTebu&_nc_oc=AdnmDpu6Dt0x2UkGtp1BXAm938m4gsRrFCbh3jrX6CYn5pMirtUMzCPgepcW2eHkjRVw5eL_C9GsWP5d0Q6QNwkA&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=w-E9eP_cBtsYBrXIP4Y_5Q&oh=00_Afg40pVcgYSIfFqnLE3fNYViYKVXYK-W-H7-LJJGjl4fgg&oe=69319441" alt="Importaciones Mikompra Logo" class="h-16 w-auto rounded-md" onerror="this.style.display='none'; document.getElementById('fallback-logo-footer').classList.remove('hidden');">
+                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=T9evMkn5xqQQ7kNvwHvTebu&_nc_oc=AdnmDpu6Dt0x2UkGtp1BXAm938m4gsRrFCbh3jrX6CYn5pMirtUMzCPgepcW2eHkjRVw5eL_C9GsWP5d0Q6QNwkA&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=w-E9eP_cBtsYBrXIP4Y_5Q&oh=00_Afg40pVcgYSIfFqnLE3fNYViYKVXYK-W-H7-LJJGjl4fgg&oe=69319441" alt="Importaciones Mikompra Logo" class="h-16 w-auto rounded-md" onerror="this.style.display='none'; document.getElementById('fallback-logo-footer').classList.remove('hidden');">
                         
                          <div id="fallback-logo-footer" class="hidden flex items-center gap-1 ml-2">
                             <span class="text-2xl font-black text-white tracking-tighter">M</span>
@@ -506,7 +512,7 @@
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                <p data-translate="footer_rights">© 2025 Importaciones Mikompra. Todos los derechos reservados.</p>
+                <p data-translate="footer_rights">&copy; 2025 Importaciones Mikompra. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -534,22 +540,17 @@
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
-
         <div class="p-4 bg-gray-100 h-64 overflow-y-auto space-y-4">
             <div class="flex justify-start">
                 <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-[85%] text-sm text-gray-700">
-                    <span id="chat-welcome-text" data-translate="chat_welcome">
-                        Hola 👋 <br>Gracias por visitar Importaciones Mikompra. ¿En qué podemos ayudarte hoy?
-                    </span>
-                    <span class="block text-right text-[10px] text-gray-400 mt-1">Ahora</span>
+                    <span data-translate="chat_welcome">Hola 👋 <br>¿En qué podemos ayudarte hoy?</span>
                 </div>
             </div>
         </div>
-
         <div class="p-3 bg-white border-t border-gray-100">
             <form onsubmit="sendToWhatsapp(event)" class="flex gap-2">
-                <input type="text" id="chat-input" placeholder="Escribe tu consulta..." class="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" required>
-                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white w-9 h-9 rounded-full flex items-center justify-center transition">
+                <input type="text" id="chat-input" placeholder="Escribe..." class="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm focus:outline-none" required>
+                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white w-9 h-9 rounded-full flex items-center justify-center">
                     <i class="fa-solid fa-paper-plane text-sm"></i>
                 </button>
             </form>
@@ -558,216 +559,224 @@
 
     <div id="toast-notification" class="fixed bottom-24 left-1/2 -translate-x-1/2 p-4 bg-green-600 text-white rounded-lg shadow-xl z-50 transition-all duration-300 transform translate-y-full opacity-0">
         <div class="flex items-center gap-3">
-            <span id="toast-message" class="font-medium text-sm">Cálculo realizado con éxito.</span>
+            <span id="toast-message" class="font-medium text-sm">Acción realizada.</span>
         </div>
     </div>
 
     <script>
-        // --- DEFINICIÓN DE TARIFAS Y FECHAS DE PROMOCIÓN ---
+        // --- 1. CONFIGURACIÓN DE TARIFAS Y FECHAS PROMOCIONALES ---
         const DEFAULT_AIR_RATE = 7.00;
         const DEFAULT_SEA_RATE = 2.50;
         const PROMO_AIR_RATE = 6.50;
         const PROMO_SEA_RATE = 2.20; 
 
-        // Rango de fechas de la promoción (3 de Diciembre de 2025 hasta el 5 de Enero de 2026)
+        // Rango de fechas: 3 de Diciembre 2025 al 5 de Enero 2026
         const PROMO_START_DATE = new Date('2025-12-03T00:00:00');
         const PROMO_END_DATE = new Date('2026-01-05T23:59:59');
         const CURRENT_DATE = new Date();
 
+        // Verificar si la fecha actual está dentro del rango
         const IS_PROMO_ACTIVE = CURRENT_DATE >= PROMO_START_DATE && CURRENT_DATE <= PROMO_END_DATE;
         
         let currentAirRate = IS_PROMO_ACTIVE ? PROMO_AIR_RATE : DEFAULT_AIR_RATE;
         let currentSeaRate = IS_PROMO_ACTIVE ? PROMO_SEA_RATE : DEFAULT_SEA_RATE;
-
-        // --- GESTIÓN DE IDIOMAS Y TRADUCCIONES ---
         let currentLang = 'es';
+        
+        // --- 2. LISTA DE ITEMS SELECCIONADOS ---
+        let selectedItems = [];
 
+        // --- 3. TRADUCCIONES ---
         const translations = {
             es: {
-                // Banner y Promociones
+                calc_helper_label: "Arma tu paquete (Selecciona producto y cantidad):",
                 banner_title: "¡Felices Fiestas!",
                 banner_message: "Solo por este Mes, aprovecha nuestros precios especiales:",
                 services_promo_alert: "¡APROVECHA NUESTROS PRECIOS DE NAVIDAD!",
                 calc_promo_note: "¡Tarifas actualizadas por oferta navideña!",
                 calc_opt_air: `Aéreo ($${currentAirRate.toFixed(2)}/lb${IS_PROMO_ACTIVE ? ' - Oferta' : ''})`, 
                 calc_opt_sea: `Marítimo ($${currentSeaRate.toFixed(2)}/lb${IS_PROMO_ACTIVE ? ' - Oferta' : ''})`,
-                
-                nav_home: "Inicio",
-                nav_services: "Servicios",
-                nav_calc: "Calculadora",
-                nav_faq: "Preguntas",
-                nav_contact: "Contáctanos",
-                hero_title: "Traemos tus compras de USA <br> directo a Nicaragua",
-                hero_subtitle: "Rápido, seguro y con las mejores tarifas del mercado. Aéreo y Marítimo.",
-                hero_btn_quote: "Cotizar Envío",
-                hero_btn_how: "Cómo Funciona",
-                services_title: "Nuestros Servicios",
-                services_subtitle: "Adaptamos nuestros envíos a tus necesidades. Ya sea que necesites rapidez o enviar grandes volúmenes.",
-                air_badge: "Más Rápido",
-                air_title: "Envío Aéreo",
-                air_desc: "Ideal para compras en línea, ropa, electrónicos pequeños y documentos. Recibe tus paquetes en tiempo récord.",
-                price_label: "Precio por libra desde:",
-                air_f1: "Salidas semanales",
-                air_f2: "Entregas a todo el país vía Cargo Trans",
-                air_f3: "Rastreo de paquete",
-                sea_badge: "Mejor Precio",
-                sea_title: "Envío Marítimo",
-                sea_desc: "La mejor opción para cajas grandes, mudanzas, repuestos pesados o electrodomésticos. Economía garantizada.",
-                sea_f1: "Sin límite de peso",
-                sea_f2: "Entregas a todo el país vía Cargo Trans",
-                sea_f3: "Tarifas especiales por volumen",
                 calc_title: "Calcula tu Envío Estimado",
                 calc_desc: "Obtén un estimado rápido de cuánto costará traer tu paquete a Nicaragua.",
-                calc_label_weight: "Peso en Libras (lb)",
+                calc_label_weight: "Peso Total (lb)",
                 calc_label_method: "Método de Envío",
-                calc_btn: "Calcular Costo",
                 calc_result_label: "Costo Estimado:",
                 calc_disclaimer: "*Tarifas sujetas a cambios y dimensiones del paquete.",
-                testim_title: "Lo que dicen nuestros clientes",
-                testim_1_text: "\"Excelente servicio, traje todos los repuestos para mi taller desde Miami y el envío marítimo fue súper económico. Recomendados.\"",
-                testim_2_text: "\"Me encanta que me traen mis paquetes hasta la puerta de mi casa en Granada. El servicio aéreo es muy rápido.\"",
-                testim_3_text: "\"Primera vez que importo y me guiaron en todo el proceso. Muy amables y profesionales. Sin duda volveré a usar Mikompra.\"",
-                faq_title: "Preguntas Frecuentes",
-                faq_q1: "¿Cuáles son los tiempos de entrega?",
-                faq_a1: "<strong>Aéreo:</strong> 1 a 3 días hábiles una vez recibido en Miami.<br><strong>Marítimo:</strong> 15 a 18 días hábiles una vez recibido en Miami.",
-                faq_q2: "¿Cobran impuestos de aduana?",
-                faq_a2: "Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales. Sin embargo, artículos de alto valor o cantidades comerciales pueden requerir pagos adicionales. Contáctanos para cotizar artículos especiales.",
-                faq_q3: "¿Qué artículos NO puedo enviar? (Restringidos)",
-                faq_a3: "No enviamos: Drones, vapes, cigarros, licor, armas de fuego, municiones, explosivos, ni armas cortopunzantes como cuchillos. Si tienes dudas sobre un producto, consúltanos antes de comprar.",
-                faq_q4: "¿Cómo obtengo mi dirección en Miami?",
-                faq_a4: "Es muy fácil y gratis. Solo escríbenos a nuestro WhatsApp o presiona el botón \"Contáctanos\" y te daremos tu código de casillero único para que empieces a comprar hoy mismo.",
-                faq_q5: "¿Ofrecen servicio de compra por mí? (Gratis)",
-                faq_a5: "¡Sí! Ofrecemos la opción de realizar la compra por ti totalmente <strong>GRATIS</strong>. Solo envíanos el enlace del producto y nosotros nos encargamos del resto.",
-                faq_q6: "¿Qué métodos de pago aceptan?",
-                faq_a6: "Aceptamos pagos con tarjetas de crédito y débito (Visa y Mastercard), depósitos y transferencias a cuentas BAC, Lafise, Banpro, Ficohsa y también Billetera Móvil.",
-                steps_title: "¿Cómo importar con nosotros?",
-                step1_title: "Regístrate",
-                step1_desc: "Contáctanos para obtener tu dirección de casillero gratis en USA.",
-                step2_title: "Compra",
-                step2_desc: "Haz tus compras en Amazon, eBay o tu tienda favorita y envíalas a tu casillero.",
-                step3_title: "Notifica",
-                step3_desc: "Envíanos tu factura y número de rastreo para procesar tu paquete.",
-                step4_title: "Recibe",
-                step4_desc: "Recibe tus productos en nuestras oficinas en Nicaragua o a domicilio.",
+                nav_home: "Inicio", nav_services: "Servicios", nav_calc: "Calculadora", nav_faq: "Preguntas", nav_contact: "Contáctanos",
+                hero_title: "Traemos tus compras de USA <br> directo a Nicaragua",
+                hero_subtitle: "Rápido, seguro y con las mejores tarifas del mercado. Aéreo y Marítimo.",
+                hero_btn_quote: "Cotizar Envío", hero_btn_how: "Cómo Funciona",
+                services_title: "Nuestros Servicios", services_subtitle: "Adaptamos nuestros envíos a tus necesidades. Ya sea que necesites rapidez o enviar grandes volúmenes.",
+                air_badge: "Más Rápido", air_title: "Envío Aéreo", air_desc: "Ideal para compras en línea, ropa, electrónicos pequeños y documentos. Recibe tus paquetes en tiempo récord.", price_label: "Precio por libra desde:",
+                sea_badge: "Mejor Precio", sea_title: "Envío Marítimo", sea_desc: "La mejor opción para cajas grandes, mudanzas, repuestos pesados o electrodomésticos. Economía garantizada.",
+                testim_title: "Lo que dicen nuestros clientes", faq_title: "Preguntas Frecuentes", map_title: "Nuestra Ubicación",
+                map_address_detail: "Búscanos en el mapa. Estamos cerca de la Gasolinera UNO Guapinol, Granada, Nicaragua.",
+                chat_welcome: "Hola 👋 <br>¿En qué podemos ayudarte hoy?", chat_placeholder: "Escribe tu consulta...",
                 footer_desc: "Facilitamos tus compras en Estados Unidos. Somos tu puente logístico seguro y confiable hacia Nicaragua.",
                 footer_contact_title: "Contacto",
-                footer_address: "Gasolinera UNO Guapinol 5 cuadras al norte, Granada, Nicaragua.", 
+                footer_address: "Gasolinera UNO Guapinol 5 cuadras al norte, Granada, Nicaragua.",
                 footer_schedule_title: "Horario de Atención",
                 footer_mon_fri: "Lunes - Viernes:",
                 footer_sat: "Sábados:",
                 footer_sun: "Domingos:",
                 footer_closed: "Cerrado",
                 footer_follow: "Síguenos",
-                footer_rights: "© 2025 Importaciones Mikompra. Todos los derechos reservados.",
-                chat_welcome: "Hola 👋 <br>Gracias por visitar Importaciones Mikompra. ¿En qué podemos ayudarte hoy?",
-                chat_placeholder: "Escribe tu consulta...",
-
-                // Stats y Mapa
+                footer_rights: "&copy; 2025 Importaciones Mikompra. Todos los derechos reservados.",
                 stat_1_desc: "Paquetes Entregados",
                 stat_2_desc: "Años de Experiencia",
                 stat_3_desc: "Departamentos de Nicaragua",
-                stat_4_desc: "En Compras Asistidas",
-                map_title: "Nuestra Ubicación",
-                map_address_detail: "Búscanos en el mapa. Estamos cerca de la Gasolinera UNO Guapinol, Granada, Nicaragua.", 
+                stat_4_desc: "En Compras Asistidas"
             },
             en: {
-                // Banner y Promociones
+                calc_helper_label: "Build your package (Select product and quantity):",
                 banner_title: "Happy Holidays!",
                 banner_message: "For this month only, take advantage of our special prices:",
                 services_promo_alert: "TAKE ADVANTAGE OF OUR CHRISTMAS PRICES!",
                 calc_promo_note: "Rates updated for the holiday offer!",
                 calc_opt_air: `Air ($${currentAirRate.toFixed(2)}/lb${IS_PROMO_ACTIVE ? ' - Offer' : ''})`, 
                 calc_opt_sea: `Sea ($${currentSeaRate.toFixed(2)}/lb${IS_PROMO_ACTIVE ? ' - Offer' : ''})`,
-
-                nav_home: "Home",
-                nav_services: "Services",
-                nav_calc: "Calculator",
-                nav_faq: "FAQ",
-                nav_contact: "Contact Us",
-                hero_title: "We bring your USA purchases <br> straight to Nicaragua",
-                hero_subtitle: "Fast, secure, and with the best rates in the market. Air and Sea.",
-                hero_btn_quote: "Get a Quote",
-                hero_btn_how: "How it Works",
-                services_title: "Our Services",
-                services_subtitle: "We adapt our shipments to your needs. Whether you need speed or sending large volumes.",
-                air_badge: "Fastest",
-                air_title: "Air Shipping",
-                air_desc: "Ideal for online shopping, clothes, small electronics, and documents. Receive your packages in record time.",
-                price_label: "Price per pound starting at:",
-                air_f1: "Weekly departures",
-                air_f2: "Nationwide delivery via Cargo Trans",
-                air_f3: "Package tracking",
-                sea_badge: "Best Price",
-                sea_title: "Sea Shipping",
-                sea_desc: "The best option for large boxes, moves, heavy parts, or appliances. Guaranteed economy.",
-                sea_f1: "No weight limit",
-                sea_f2: "Nationwide delivery via Cargo Trans",
-                sea_f3: "Special rates for volume",
                 calc_title: "Calculate Your Estimated Shipping",
                 calc_desc: "Get a quick estimate of how much it will cost to bring your package to Nicaragua.",
-                calc_label_weight: "Weight in Pounds (lb)",
+                calc_label_weight: "Total Weight (lb)",
                 calc_label_method: "Shipping Method",
-                calc_btn: "Calculate Cost",
                 calc_result_label: "Estimated Cost:",
                 calc_disclaimer: "*Rates subject to change and package dimensions.",
-                testim_title: "What Our Customers Say",
-                testim_1_text: "\"Excellent service, I brought all the spare parts for my workshop from Miami and sea shipping was super affordable. Highly recommended.\"",
-                testim_2_text: "\"I love that they bring my packages right to my door in Granada. Air shipping is very fast.\"",
-                testim_3_text: "\"First time importing and they guided me through the whole process. Very kind and professional. I will definitely use Mikompra again.\"",
-                faq_title: "Frequently Asked Questions",
-                faq_q1: "What are the shipping times?",
-                faq_a1: "<strong>Air:</strong> 1 to 3 business days after receiving in Miami.<br><strong>Sea:</strong> 15 to 18 business days after receiving in Miami.",
-                faq_q2: "Do you charge customs taxes?",
-                faq_a2: "Our rate per pound already includes customs handling for most personal items. However, high-value items or commercial quantities may require additional payments. Contact us for special quotes.",
-                faq_q3: "What items can I NOT send? (Restricted)",
-                faq_a3: "We do not ship: Drones, vapes, cigarettes, liquor, firearms, ammunition, explosives, or bladed weapons like knives. If you have doubts about a product, ask us before buying.",
-                faq_q4: "How do I get my Miami address?",
-                faq_a4: "It's very easy and free. Just write to us on WhatsApp or press the 'Contact Us' button and we'll give you your unique locker code to start shopping today.",
-                faq_q5: "Do you offer assisted purchase service? (Free)",
-                faq_a5: "Yes! We offer the option to make the purchase for you completely <strong>FREE</strong>. Just send us the product link and we'll take care of the rest.",
-                faq_q6: "What payment methods do you accept?",
-                faq_a6: "We accept credit and debit cards (Visa and Mastercard), bank deposits and transfers to BAC, Lafise, Banpro, Ficohsa accounts, and also Billetera Móvil.",
-                steps_title: "How to import with us?",
-                step1_title: "Register",
-                step1_desc: "Contact us to get your free USA locker address.",
-                step2_title: "Shop",
-                step2_desc: "Shop at Amazon, eBay, or your favorite store and send them to your locker.",
-                step3_title: "Notify",
-                step3_desc: "Send us your invoice and tracking number to process your package.",
-                step4_title: "Receive",
-                step4_desc: "Receive your products at our offices in Nicaragua or at your doorstep.",
+                nav_home: "Home", nav_services: "Services", nav_calc: "Calculator", nav_faq: "FAQ", nav_contact: "Contact Us",
+                hero_title: "We bring your USA purchases <br> straight to Nicaragua",
+                hero_subtitle: "Fast, secure, and with the best rates in the market. Air and Sea.",
+                hero_btn_quote: "Get a Quote", hero_btn_how: "How it Works",
+                services_title: "Our Services", services_subtitle: "We adapt our shipments to your needs. Whether you need speed or sending large volumes.",
+                air_badge: "Fastest", air_title: "Air Shipping", air_desc: "Ideal for online shopping, clothes, small electronics, and documents. Receive your packages in record time.", price_label: "Price per pound starting at:",
+                sea_badge: "Best Price", sea_title: "Sea Shipping", sea_desc: "The best option for large boxes, moves, heavy parts, or appliances. Guaranteed economy.",
+                testim_title: "What Our Customers Say", faq_title: "Frequently Asked Questions", map_title: "Our Location",
+                map_address_detail: "Find us on the map. We are near UNO Guapinol Gas Station, Granada, Nicaragua.",
+                chat_welcome: "Hello 👋 <br>How can we help you today?", chat_placeholder: "Type your message...",
                 footer_desc: "We facilitate your purchases in the United States. We are your safe and reliable logistics bridge to Nicaragua.",
                 footer_contact_title: "Contact",
-                footer_address: "UNO Guapinol Gas Station, 5 blocks north, Granada, Nicaragua.", 
+                footer_address: "UNO Guapinol Gas Station, 5 blocks north, Granada, Nicaragua.",
                 footer_schedule_title: "Business Hours",
                 footer_mon_fri: "Monday - Friday:",
                 footer_sat: "Saturdays:",
                 footer_sun: "Sundays:",
                 footer_closed: "Closed",
                 footer_follow: "Follow Us",
-                footer_rights: "© 2025 Importaciones Mikompra. All rights reserved.",
-                chat_welcome: "Hello 👋 <br>Thanks for visiting Importaciones Mikompra. How can we help you today?",
-                chat_placeholder: "Type your message...",
-
-                // Stats y Mapa
+                footer_rights: "&copy; 2025 Importaciones Mikompra. All rights reserved.",
                 stat_1_desc: "Packages Delivered",
                 stat_2_desc: "Years of Experience",
                 stat_3_desc: "Departments in Nicaragua",
-                stat_4_desc: "In Assisted Purchases",
-                map_title: "Our Location",
-                map_address_detail: "Find us on the map. We are near UNO Guapinol Gas Station, Granada, Nicaragua.", 
+                stat_4_desc: "In Assisted Purchases"
             }
         };
 
-        // --- INICIALIZACIÓN DE ESTILOS Y TARIFAS ---
+        // --- 4. INICIALIZACIÓN ---
         document.addEventListener('DOMContentLoaded', () => {
             applyPromoLogic();
-            const statsContainer = document.getElementById('stats-container');
-            if (statsContainer) {
-                counterObserver.observe(statsContainer);
+            if (IS_PROMO_ACTIVE && document.getElementById('stats-container')) {
+               // Iniciar contadores si es necesario
+               counterObserver.observe(document.getElementById('stats-container'));
+            } else if (document.getElementById('stats-container')) {
+                counterObserver.observe(document.getElementById('stats-container'));
             }
         });
 
+        // --- 5. LÓGICA DE CARRITO MULTI-ITEM ---
+        function addItemToList() {
+            const selector = document.getElementById('item-estimator');
+            const qtyInput = document.getElementById('item-quantity');
+            const selectedOption = selector.options[selector.selectedIndex];
+            
+            if (!selector.value) {
+                showToast(currentLang === 'es' ? '⚠️ Selecciona un artículo primero.' : '⚠️ Select an item first.', 'bg-yellow-500');
+                return;
+            }
+
+            const unitWeight = parseFloat(selector.value);
+            const name = selectedOption.getAttribute('data-name');
+            let qty = parseInt(qtyInput.value);
+
+            // Validar cantidad
+            if (isNaN(qty) || qty < 1) { qty = 1; }
+
+            const totalItemWeight = unitWeight * qty;
+
+            // Agregar a la lista
+            selectedItems.push({ name, unitWeight, qty, totalWeight: totalItemWeight });
+
+            // Actualizar interfaz
+            renderItemsList();
+            updateTotalWeight();
+            
+            // Resetear inputs
+            selector.value = "";
+            qtyInput.value = "1";
+            
+            showToast(currentLang === 'es' ? 'Producto agregado.' : 'Product added.', 'bg-green-600');
+        }
+
+        function removeItem(index) {
+            selectedItems.splice(index, 1);
+            renderItemsList();
+            updateTotalWeight();
+        }
+
+        function clearItemsList() {
+            selectedItems = [];
+            renderItemsList();
+            updateTotalWeight();
+        }
+
+        function renderItemsList() {
+            const listContainer = document.getElementById('items-list-container');
+            const listUl = document.getElementById('items-list');
+            
+            listUl.innerHTML = "";
+
+            if (selectedItems.length === 0) {
+                listContainer.classList.add('hidden');
+                return;
+            }
+
+            listContainer.classList.remove('hidden');
+
+            selectedItems.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.className = "flex justify-between items-center bg-blue-50 px-3 py-2 rounded text-sm border border-blue-100 item-added";
+                li.innerHTML = `
+                    <span>
+                        <span class="font-bold text-brand-blue">${item.qty} x</span> ${item.name} 
+                        <span class="text-gray-500 text-xs ml-1">(${item.totalWeight.toFixed(1)} lb)</span>
+                    </span>
+                    <button onclick="removeItem(${index})" class="text-red-400 hover:text-red-600 ml-2 transition">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                `;
+                listUl.appendChild(li);
+            });
+        }
+
+        function updateTotalWeight() {
+            const weightInput = document.getElementById('weight');
+            
+            // Sumar pesos totales
+            const total = selectedItems.reduce((sum, item) => sum + item.totalWeight, 0);
+            const roundedTotal = Math.round(total * 10) / 10; // Redondear 1 decimal
+
+            weightInput.value = roundedTotal > 0 ? roundedTotal : "";
+
+            // Bloquear input manual si hay items, desbloquear si está vacío
+            if (selectedItems.length > 0) {
+                weightInput.setAttribute('readonly', true);
+                weightInput.classList.add('bg-gray-100', 'cursor-not-allowed');
+                weightInput.classList.remove('bg-white');
+            } else {
+                weightInput.removeAttribute('readonly');
+                weightInput.classList.remove('bg-gray-100', 'cursor-not-allowed');
+                weightInput.classList.add('bg-white');
+            }
+
+            calculateShipping(); // Calcular precio automáticamente
+        }
+
+        // --- 6. LÓGICA DE PROMOCIONES Y VISUALIZACIÓN ---
         function applyPromoLogic() {
             const nav = document.getElementById('main-nav');
             const hero = document.getElementById('inicio');
@@ -779,46 +788,33 @@
             const seaPriceDisplay = document.getElementById('sea-price-display');
             const methodSelect = document.getElementById('method');
 
-            // 1. Aplicar estilo si la promo está ACTIVA
             if (IS_PROMO_ACTIVE) {
-                const bannerHeight = 48; // Altura fija del banner en px
-                
-                // Mostrar elementos de promoción
+                // Activar modo Navidad
+                const bannerHeight = 48; // px
                 banner.classList.remove('hidden');
                 servicesPromoAlert.classList.remove('hidden');
                 calcPromoNote.classList.remove('hidden');
-
-                // Ajustar posición de la navegación y el hero para hacer espacio al banner
-                nav.style.top = `${bannerHeight}px`;
-                hero.style.paddingTop = `${bannerHeight + 80}px`; // 80px es el padding base de la nav
-
-                // Actualizar tarifas en Servicios (HTML)
-                airPriceDisplay.innerHTML = `
-                    <p class="text-4xl font-bold text-red-600 line-through mr-2 inline-block">$${DEFAULT_AIR_RATE.toFixed(2)}</p>
-                    <p class="text-4xl font-bold text-brand-blue inline-block">$${PROMO_AIR_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>
-                `;
-                seaPriceDisplay.innerHTML = `
-                    <p class="text-4xl font-bold text-red-600 line-through mr-2 inline-block">$${DEFAULT_SEA_RATE.toFixed(2)}</p>
-                    <p class="text-4xl font-bold text-brand-blue inline-block">$${PROMO_SEA_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>
-                `;
-            } else {
-                // 2. Aplicar estilo REGULAR (Post-promoción)
                 
-                // Ocultar elementos de promoción
+                // Ajustar margen superior
+                nav.style.top = `${bannerHeight}px`;
+                hero.style.paddingTop = `${bannerHeight + 80}px`;
+
+                // Actualizar HTML de Precios en Servicios
+                airPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-red-600 line-through mr-2 inline-block">$${DEFAULT_AIR_RATE.toFixed(2)}</p><p class="text-4xl font-bold text-brand-blue inline-block">$${PROMO_AIR_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
+                seaPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-red-600 line-through mr-2 inline-block">$${DEFAULT_SEA_RATE.toFixed(2)}</p><p class="text-4xl font-bold text-brand-blue inline-block">$${PROMO_SEA_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
+            } else {
+                // Modo Normal
                 banner.classList.add('hidden');
                 servicesPromoAlert.classList.add('hidden');
                 calcPromoNote.classList.add('hidden');
-                
-                // Restablecer estilos de posición
                 nav.style.top = `0px`;
                 hero.style.paddingTop = `80px`;
 
-                // Restablecer tarifas en Servicios (HTML)
                 airPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-brand-blue inline-block">$${DEFAULT_AIR_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
                 seaPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-brand-blue inline-block">$${DEFAULT_SEA_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
             }
 
-            // 3. Ajustar tarifas en el SELECT de la Calculadora (si existe)
+            // Actualizar el texto del Select en la calculadora
             if (methodSelect) {
                 methodSelect.querySelector('option[value="air"]').textContent = translations[currentLang].calc_opt_air;
                 methodSelect.querySelector('option[value="sea"]').textContent = translations[currentLang].calc_opt_sea;
@@ -826,9 +822,7 @@
         }
 
         function toggleLanguage() {
-            // Código de cambio de idioma (sin cambios)
             currentLang = currentLang === 'es' ? 'en' : 'es';
-            
             const icon = currentLang === 'es' ? '🇺🇸' : '🇳🇮';
             const text = currentLang === 'es' ? 'EN' : 'ES';
             
@@ -840,35 +834,21 @@
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.getAttribute('data-translate');
                 if (translations[currentLang][key]) {
-                    if (el.tagName === 'INPUT') {
-                        el.placeholder = translations[currentLang][key];
-                    } else {
-                        el.innerHTML = translations[currentLang][key];
-                    }
+                    if (el.tagName === 'INPUT') el.placeholder = translations[currentLang][key];
+                    else el.innerHTML = translations[currentLang][key];
                 }
             });
-
             document.getElementById('chat-input').placeholder = translations[currentLang]['chat_placeholder'];
-
-            // Recargar la lógica de promociones después del cambio de idioma para actualizar el SELECT
-            applyPromoLogic();
+            applyPromoLogic(); // Re-aplicar para actualizar textos dinámicos
         }
 
-        // Lógica del Menú Móvil (sin cambios)
+        // --- 7. MENÚ MÓVIL ---
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-
-        // --- LÓGICA DE LA CALCULADORA (Usa las tarifas globales) ---
+        // --- 8. CÁLCULO AUTOMÁTICO ---
         function calculateShipping() {
             const weightInput = document.getElementById('weight');
             const weight = parseFloat(weightInput.value);
@@ -877,58 +857,48 @@
             const costDisplay = document.getElementById('cost-display');
 
             if (isNaN(weight) || weight <= 0) {
-                showToast(
-                    currentLang === 'es' ? '❌ Por favor, ingresa un peso válido.' : '❌ Please enter a valid weight.',
-                    'bg-red-500'
-                );
-                weightInput.focus();
+                // Si está vacío, resetear display a 0
+                costDisplay.textContent = '$0.00';
                 return;
             }
 
-            let rate = 0;
-            if (method === 'air') {
-                rate = currentAirRate; // Usa la tarifa ACTUAL (promo o regular)
-            } else {
-                rate = currentSeaRate; // Usa la tarifa ACTUAL (promo o regular)
-            }
-
+            let rate = (method === 'air') ? currentAirRate : currentSeaRate;
             const total = weight * rate;
 
             costDisplay.textContent = '$' + total.toFixed(2);
             
+            // Animación sutil
             resultDiv.classList.remove('hidden');
             resultDiv.classList.add('animate-pulse');
-            setTimeout(() => {
-                resultDiv.classList.remove('animate-pulse');
-            }, 500);
-
-            showToast(
-                currentLang === 'es' ? '✅ Cálculo estimado generado.' : '✅ Estimated calculation generated.',
-                'bg-green-600'
-            );
+            setTimeout(() => resultDiv.classList.remove('animate-pulse'), 500);
         }
 
-        // --- Nueva función para mostrar el Toast (sin cambios) ---
+        // --- 9. NOTIFICACIONES TOAST ---
         function showToast(message, colorClass = 'bg-green-600') {
             const toast = document.getElementById('toast-notification');
             const toastMessage = document.getElementById('toast-message');
-
+            
+            // Resetear clases
             toast.className = 'fixed bottom-24 left-1/2 -translate-x-1/2 p-4 text-white rounded-lg shadow-xl z-50 transition-all duration-300 transform opacity-0';
             toast.classList.add(colorClass);
 
-            const icon = message.includes('❌') ? 'fa-circle-xmark' : 'fa-check-circle';
-            toastMessage.innerHTML = `<i class="fa-solid ${icon} text-2xl mr-3"></i><span class="font-medium text-sm">${message.replace('❌ ', '').replace('✅ ', '').replace('🚀 ', '')}</span>`;
+            // Icono dinámico
+            const icon = message.includes('⚠️') ? 'fa-triangle-exclamation' : (message.includes('❌') ? 'fa-circle-xmark' : 'fa-check-circle');
+            
+            toastMessage.innerHTML = `<i class="fa-solid ${icon} text-2xl mr-3"></i><span class="font-medium text-sm">${message.replace(/❌|✅|⚠️/g, '').trim()}</span>`;
 
+            // Mostrar
             toast.classList.remove('translate-y-full', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
 
+            // Ocultar
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-full', 'opacity-0');
-            }, 4000);
+            }, 3000);
         }
 
-        // Lógica del Chat Flotante (sin cambios)
+        // --- 10. CHAT ---
         function toggleChat() {
             const chatWindow = document.getElementById('chat-window');
             if (chatWindow.classList.contains('hidden')) {
@@ -951,25 +921,19 @@
             e.preventDefault();
             const input = document.getElementById('chat-input');
             const message = input.value;
-            
             if (message.trim() === "") return;
-
             const phoneNumber = "50588826162";
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            
             window.open(whatsappUrl, '_blank');
-            
             input.value = "";
             toggleChat();
         }
 
-        // --- LÓGICA DE CONTADOR ANIMADO (sin cambios) ---
+        // --- 11. CONTADOR ANIMADO ---
         function startCounter(el, target) {
             const duration = 2000;
-            const start = 0;
             const step = Math.ceil(target / (duration / 16)); 
-            let current = start;
-
+            let current = 0;
             const timer = setInterval(() => {
                 current += step;
                 if (current >= target) {
@@ -991,14 +955,11 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 }); 
+        }, { threshold: 0.5 });
+        
+        const statsContainer = document.getElementById('stats-container');
+        if (statsContainer) counterObserver.observe(statsContainer);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const statsContainer = document.getElementById('stats-container');
-            if (statsContainer) {
-                counterObserver.observe(statsContainer);
-            }
-        });
     </script>
 </body>
 </html>
