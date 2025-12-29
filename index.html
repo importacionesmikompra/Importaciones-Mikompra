@@ -38,8 +38,7 @@
                 <span class="christmas-tree">🎄</span> 
                 <span class="text-yellow-300 font-extrabold" data-translate="banner_title">¡Felices Fiestas!</span>
                 <span data-translate="banner_message">Solo por este Mes, aprovecha nuestros precios especiales:</span>
-                <span class="bg-white text-brand-blue px-2 py-0.5 rounded-full font-black text-[11px] md:text-sm">
-                    Aéreo <span class="text-red-600">$6.50</span> | Marítimo <span class="text-red-600">$2.20</span>
+                <span id="banner-prices-badge" class="bg-white text-brand-blue px-2 py-0.5 rounded-full font-black text-[11px] md:text-sm">
                 </span>
                 <span class="christmas-tree">🎄</span>
             </p>
@@ -64,24 +63,24 @@
                     <a href="#calculadora" class="text-gray-600 hover:text-brand-blue transition font-medium" data-translate="nav_calc">Calculadora</a>
                     <a href="#faq" class="text-gray-600 hover:text-brand-blue transition font-medium" data-translate="nav_faq">Preguntas</a>
                     <a href="#contacto" class="bg-brand-orange text-white px-5 py-2 rounded-full hover:bg-orange-600 transition font-medium shadow-md" data-translate="nav_contact">Contáctanos</a>
-                    <button onclick="toggleLanguage()" class="border border-gray-300 rounded-full px-3 py-1 text-sm font-bold flex items-center gap-1 hover:bg-gray-50">
+                    <button onclick="toggleLanguage()" class="border border-gray-300 rounded-full px-3 py-1 text-sm font-bold flex items-center gap-1 hover:bg-gray-50 text-gray-700">
                         <span id="lang-icon">🇺🇸</span> <span id="lang-text">EN</span>
                     </button>
                 </div>
                 <div class="lg:hidden flex items-center gap-2">
-                    <button onclick="toggleLanguage()" class="flex items-center gap-1 border border-gray-200 rounded-lg px-2 py-1 bg-gray-50">
-                        <span id="mobile-lang-icon" class="text-lg">🇺🇸</span>
+                    <button onclick="toggleLanguage()" class="flex items-center gap-1 border border-gray-200 rounded-lg px-2 py-1 bg-gray-50 shadow-sm">
+                        <span id="mobile-lang-icon">🇺🇸</span>
                         <span id="mobile-lang-text" class="text-xs font-bold text-gray-600">EN</span>
                     </button>
                     <button id="mobile-menu-button" class="text-brand-blue text-2xl focus:outline-none p-1"><i class="fa-solid fa-bars"></i></button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-xl">
-            <a href="#inicio" class="block px-6 py-4 border-b text-gray-700" data-translate="nav_home">Inicio</a>
-            <a href="#servicios" class="block px-6 py-4 border-b text-gray-700" data-translate="nav_services">Servicios</a>
-            <a href="#calculadora" class="block px-6 py-4 border-b text-gray-700" data-translate="nav_calc">Calculadora</a>
-            <a href="#faq" class="block px-6 py-4 border-b text-gray-700" data-translate="nav_faq">Preguntas</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-xl text-gray-700">
+            <a href="#inicio" class="block px-6 py-4 border-b" data-translate="nav_home">Inicio</a>
+            <a href="#servicios" class="block px-6 py-4 border-b" data-translate="nav_services">Servicios</a>
+            <a href="#calculadora" class="block px-6 py-4 border-b" data-translate="nav_calc">Calculadora</a>
+            <a href="#faq" class="block px-6 py-4 border-b" data-translate="nav_faq">Preguntas</a>
             <a href="#contacto" class="block px-6 py-4 text-brand-orange font-bold font-medium" data-translate="nav_contact">Contáctanos</a>
         </div>
     </nav>
@@ -97,7 +96,7 @@
     </section>
 
     <section class="py-12 bg-gray-100" id="stats-section">
-        <div class="max-w-7xl mx-auto px-4 text-center">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-700">
             <div class="grid grid-cols-2 gap-4 md:gap-8">
                 <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-200">
                     <p class="text-4xl md:text-5xl font-extrabold text-brand-blue mb-1"><span class="counter" data-target="5">0</span></p>
@@ -112,7 +111,7 @@
     </section>
     
     <section id="servicios" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-700">
             <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4" data-translate="services_title">Nuestros Servicios</h2>
             <p id="services-promo-alert" class="text-red-600 text-lg md:text-2xl font-black mb-12 hidden" data-translate="services_promo_alert">¡APROVECHA NUESTROS PRECIOS DE NAVIDAD!</p>
 
@@ -133,7 +132,7 @@
                         <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> <span data-translate="air_f2">Rastreo de paquetes</span></li>
                     </ul>
                 </div>
-                <div class="bg-gray-50 rounded-3xl p-6 md:p-10 shadow-lg border border-gray-100 relative overflow-hidden">
+                <div class="bg-gray-50 rounded-3xl p-6 md:p-10 shadow-lg border border-gray-100 relative overflow-hidden text-gray-700">
                     <div class="absolute top-0 right-0 bg-brand-orange text-white px-4 py-1 rounded-bl-xl font-bold text-[10px] md:text-xs" data-translate="sea_badge">Mejor Precio</div>
                     <div class="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-orange-100 text-brand-orange rounded-2xl mb-6 text-2xl md:text-3xl"><i class="fa-solid fa-ship"></i></div>
                     <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2" data-translate="sea_title">Envío Marítimo</h3>
@@ -163,23 +162,24 @@
                 <div class="mb-6 p-4 md:p-6 bg-blue-50 border border-blue-100 rounded-2xl text-left text-gray-700">
                     <label class="block text-sm font-bold mb-3 text-brand-blue" data-translate="calc_helper_label">Arma tu paquete (Producto y Cantidad):</label>
                     <div class="flex flex-col md:flex-row gap-3">
-                        <select id="item-estimator" class="flex-[3] p-3 border border-gray-300 rounded-xl text-sm md:text-base">
+                        <select id="item-estimator" class="flex-[3] p-3 border border-gray-300 rounded-xl text-sm md:text-base text-gray-700">
                             <option value="" selected disabled data-translate="calc_select_item">-- Selecciona un artículo --</option>
-                            <option value="0.5" data-name="Camiseta">Camiseta (0.5 lb)</option>
-                            <option value="1.5" data-name="Jeans">Jeans (1.5 lb)</option>
-                            <option value="2.5" data-name="Zapatos">Zapatos (2.5 lb)</option>
-                            <option value="1.0" data-name="Perfume">Perfume (1.0 lb)</option>
+                            <option value="0.5" data-key="item_shirt">Camiseta (0.5 lb)</option>
+                            <option value="1.5" data-key="item_jeans">Jeans (1.5 lb)</option>
+                            <option value="2.5" data-key="item_shoes">Zapatos (2.5 lb)</option>
+                            <option value="1.0" data-key="item_perfume">Perfume (1.0 lb)</option>
+                            <option value="1.5" data-key="item_book">Libro (1.5 lb)</option>
                         </select>
-                        <div class="flex gap-2">
-                            <input type="number" id="item-quantity" value="1" min="1" class="w-20 md:w-24 p-3 border border-gray-300 rounded-xl text-center font-bold">
+                        <div class="flex gap-2 text-gray-700">
+                            <input type="number" id="item-quantity" value="1" min="1" class="w-20 md:w-24 p-3 border border-gray-300 rounded-xl text-center font-bold text-gray-700">
                             <button onclick="addItemToList()" class="flex-1 md:flex-none bg-brand-orange text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition shadow-md" data-translate="calc_add_btn">Agregar</button>
                         </div>
                     </div>
                     <div id="items-list-container" class="hidden mt-6">
-                        <ul id="items-list" class="space-y-2 mb-4 max-h-48 overflow-y-auto"></ul>
-                        <div class="flex justify-between items-center border-t pt-3 text-gray-700">
+                        <ul id="items-list" class="space-y-2 mb-4 max-h-48 overflow-y-auto text-sm text-gray-700 font-medium"></ul>
+                        <div class="flex justify-between items-center border-t pt-3 text-gray-700 font-bold">
                             <button onclick="clearItemsList()" class="text-xs md:text-sm text-red-500 font-bold hover:underline" data-translate="calc_clear_all">Borrar todo</button>
-                            <p class="text-sm md:text-base font-bold text-brand-blue"><span data-translate="calc_total_weight">Peso</span>: <span id="total-weight-display">0.0</span> lb</p>
+                            <p class="text-sm md:text-base text-brand-blue"><span data-translate="calc_total_weight">Peso</span>: <span id="total-weight-display">0.0</span> lb</p>
                         </div>
                     </div>
                 </div>
@@ -190,7 +190,7 @@
                     </div>
                     <div>
                         <label class="block text-xs md:text-sm font-bold mb-1 text-gray-500" data-translate="calc_label_method">Método de Envío</label>
-                        <select id="method" class="w-full p-3 md:p-4 border border-gray-300 rounded-xl font-bold bg-white" onchange="calculateShipping()">
+                        <select id="method" class="w-full p-3 md:p-4 border border-gray-300 rounded-xl font-bold bg-white text-gray-700" onchange="calculateShipping()">
                             <option value="air">Aéreo</option>
                             <option value="sea">Marítimo</option>
                         </select>
@@ -204,19 +204,27 @@
         </div>
     </section>
 
-    <section id="como-funciona" class="py-16 md:py-24 bg-gray-50 text-center">
+    <section id="como-funciona" class="py-16 md:py-24 bg-gray-50 text-center text-gray-700 font-medium">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-brand-blue mb-12 md:mb-20" data-translate="steps_title">¿Cómo importar con nosotros?</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                <div class="relative"><div class="w-16 h-16 md:w-20 md:h-20 bg-white shadow-lg rounded-3xl flex items-center justify-center mx-auto mb-6 text-brand-orange text-2xl md:text-3xl font-bold border-2 border-brand-orange">1</div><h3 class="font-bold text-xl mb-2" data-translate="step1_title">Regístrate</h3><p class="text-gray-500 text-sm" data-translate="step1_desc">Pide tu dirección de casillero GRATIS en USA por WhatsApp.</p></div>
-                <div class="relative"><div class="w-16 h-16 md:w-20 md:h-20 bg-white shadow-lg rounded-3xl flex items-center justify-center mx-auto mb-6 text-brand-orange text-2xl md:text-3xl font-bold border-2 border-brand-orange">2</div><h3 class="font-bold text-xl mb-2" data-translate="step2_title">Compra</h3><p class="text-gray-500 text-sm" data-translate="step2_desc">Compra en tus tiendas favoritas y envíalas a tu casillero.</p></div>
+                <div class="relative">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white shadow-lg rounded-3xl flex items-center justify-center mx-auto mb-6 text-brand-orange text-2xl md:text-3xl font-bold border-2 border-brand-orange">1</div>
+                    <h3 class="font-bold text-xl mb-2" data-translate="step1_title">Regístrate</h3>
+                    <p class="text-gray-500 text-sm" data-translate="step1_desc">Pide tu dirección Gratis en Estados Unidos por Whatsapp.</p>
+                </div>
+                <div class="relative">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white shadow-lg rounded-3xl flex items-center justify-center mx-auto mb-6 text-brand-orange text-2xl md:text-3xl font-bold border-2 border-brand-orange">2</div>
+                    <h3 class="font-bold text-xl mb-2" data-translate="step2_title">Compra</h3>
+                    <p class="text-gray-500 text-sm" data-translate="step2_desc">Haz tus compras en tus tiendas favoritas como Amazon, Shein entre muchas más.</p>
+                </div>
                 <div class="relative"><div class="w-16 h-16 md:w-20 md:h-20 bg-white shadow-lg rounded-3xl flex items-center justify-center mx-auto mb-6 text-brand-orange text-2xl md:text-3xl font-bold border-2 border-brand-orange">3</div><h3 class="font-bold text-xl mb-2" data-translate="step3_title">Notifica</h3><p class="text-gray-500 text-sm" data-translate="step3_desc">Envíanos tu factura y tracking para procesar tu paquete.</p></div>
                 <div class="relative"><div class="w-16 h-16 md:w-20 md:h-20 bg-white shadow-lg rounded-3xl flex items-center justify-center mx-auto mb-6 text-brand-orange text-2xl md:text-3xl font-bold border-2 border-brand-orange">4</div><h3 class="font-bold text-xl mb-2" data-translate="step4_title">Recibe</h3><p class="text-gray-500 text-sm" data-translate="step4_desc">Recibe tus productos en Nicaragua y paga al recibir.</p></div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-16 md:py-24 bg-white">
+    <section id="faq" class="py-16 md:py-24 bg-white text-gray-700">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-brand-blue mb-12" data-translate="faq_title">Preguntas Frecuentes</h2>
             <div class="space-y-4">
@@ -226,7 +234,7 @@
                 </details>
                 <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left text-gray-700">
                     <summary class="flex justify-between items-center font-bold text-sm md:text-lg text-gray-800"><span data-translate="faq_q2">¿Cobran impuestos de aduana?</span><i class="fa-solid fa-chevron-down text-brand-orange transition group-open:rotate-180"></i></summary>
-                    <p class="text-gray-600 mt-4 text-sm md:text-base" data-translate="faq_a2">Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales.</p>
+                    <p class="text-gray-600 mt-4 text-sm md:text-base" data-translate="faq_a2">No, no hay cargos ocultos ni adicionales por aduana, solamente pagas por el total de libras que pidas.</p>
                 </details>
                 <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left text-gray-700">
                     <summary class="flex justify-between items-center font-bold text-sm md:text-lg text-gray-800"><span data-translate="faq_q_dept">¿Existe algun costo adicional por entregar a los departamentos?</span><i class="fa-solid fa-chevron-down text-brand-orange transition group-open:rotate-180"></i></summary>
@@ -244,8 +252,8 @@
         </div>
     </section>
 
-    <section class="py-16 bg-gray-100 text-center text-gray-700">
-        <div class="max-w-7xl mx-auto px-4 text-gray-700">
+    <section class="py-16 bg-gray-100 text-center">
+        <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-brand-blue mb-8" data-translate="map_title">Nuestra Ubicación</h2>
             <div class="rounded-3xl overflow-hidden shadow-xl h-64 md:h-96 mb-6 border border-gray-200">
                 <iframe src="https://maps.google.com/maps?q=Granada,Nicaragua&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -286,13 +294,13 @@
         </div>
     </footer>
 
-    <div class="fixed bottom-6 right-6 z-50">
+    <div class="fixed bottom-6 right-6 z-50 text-gray-700">
         <button onclick="toggleChat()" class="bg-green-500 text-white w-14 h-14 md:w-16 md:h-16 rounded-3xl shadow-2xl flex items-center justify-center animate-bounce-slow transition hover:scale-110"><i class="fa-brands fa-whatsapp text-3xl md:text-4xl"></i></button>
     </div>
     <div id="chat-window" class="fixed bottom-24 right-6 w-[85vw] md:w-80 bg-white rounded-3xl shadow-2xl z-50 hidden overflow-hidden transform transition-all duration-300 origin-bottom-right scale-0 opacity-0 border border-gray-200 text-gray-700">
         <div class="bg-brand-blue p-4 flex justify-between items-center text-white"><h4 class="font-bold text-sm">Soporte Mikompra</h4><button onclick="toggleChat()"><i class="fa-solid fa-xmark"></i></button></div>
         <div class="p-5 bg-gray-100 h-64 overflow-y-auto text-xs md:text-sm text-gray-700" data-translate="chat_welcome_msg">Hola 👋 ¿Cómo podemos ayudarte hoy?</div>
-        <div class="p-3 bg-white border-t"><form onsubmit="sendToWhatsapp(event)" class="flex gap-2"><input type="text" id="chat-input" placeholder="..." class="flex-1 bg-gray-100 rounded-2xl px-4 py-2 text-sm focus:outline-none" required><button type="submit" class="bg-green-500 text-white w-10 h-10 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-paper-plane text-sm"></i></button></form></div>
+        <div class="p-3 bg-white border-t text-gray-700"><form onsubmit="sendToWhatsapp(event)" class="flex gap-2 text-gray-700"><input type="text" id="chat-input" placeholder="..." class="flex-1 bg-gray-100 rounded-2xl px-4 py-2 text-sm focus:outline-none text-gray-700" required><button type="submit" class="bg-green-500 text-white w-10 h-10 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-paper-plane text-sm"></i></button></form></div>
     </div>
 
     <div id="toast-notification" class="fixed bottom-24 left-1/2 -translate-x-1/2 p-4 bg-green-600 text-white rounded-2xl shadow-xl z-[60] transition-all duration-300 transform translate-y-full opacity-0 text-xs md:text-sm whitespace-nowrap"><i class="fa-solid fa-check-circle mr-2"></i><span id="toast-message">Cálculo realizado.</span></div>
@@ -300,7 +308,8 @@
     <script>
         const DEFAULT_AIR = 7.00, DEFAULT_SEA = 2.50, PROMO_AIR = 6.50, PROMO_SEA = 2.20;
         const PROMO_START = new Date('2025-12-03'), PROMO_END = new Date('2026-01-05');
-        const IS_PROMO = new Date() >= PROMO_START && new Date() <= PROMO_END;
+        const CURRENT_DATE = new Date();
+        const IS_PROMO = CURRENT_DATE >= PROMO_START && CURRENT_DATE <= PROMO_END;
         let currentAir = IS_PROMO ? PROMO_AIR : DEFAULT_AIR, currentSea = IS_PROMO ? PROMO_SEA : DEFAULT_SEA;
         let currentLang = 'es', selectedItems = [];
 
@@ -314,11 +323,13 @@
                 air_badge: "Más Rápido", air_title: "Envío Aéreo", air_desc: "Ideal para compras en línea, ropa y electrónicos.", price_label: "Precio por libra desde:", air_f1: "Salidas semanales", air_f2: "Rastreo de paquetes",
                 sea_badge: "Mejor Precio", sea_title: "Envío Marítimo", sea_desc: "La mejor opción para cajas grandes y mudanzas.", sea_f1: "Sin límite de peso", sea_f2: "Tarifas especiales para Emprendedores",
                 calc_title: "Calcula tu Envío Estimado", calc_promo_note: "¡Tarifas actualizadas por oferta navideña!", calc_helper_label: "Arma tu paquete (Producto y Cantidad):", calc_select_item: "-- Selecciona un artículo --", calc_add_btn: "Agregar", calc_clear_all: "Borrar todo", calc_total_weight: "Peso", calc_label_weight: "Peso Total (lb)", calc_label_method: "Método de Envío", calc_result_label: "Costo Estimado:",
-                steps_title: "¿Cómo importar con nosotros?", step1_title: "Regístrate", step1_desc: "Pide tu dirección de casillero GRATIS en USA por WhatsApp.", step2_title: "Compra", step2_desc: "Haz tus compras en tus tiendas favoritas y envíalas a tu casillero.", step3_title: "Notifica", step3_desc: "Envíanos tu factura y tracking para procesar tu paquete.", step4_title: "Recibe", step4_desc: "Recibe tus productos en Nicaragua y paga al recibir.",
-                faq_title: "Preguntas Frecuentes", faq_q1: "¿Cuáles son los tiempos de entrega?", faq_a1: "Aéreo: 1-3 días | Marítimo: 15-18 días.", faq_q2: "¿Cobran impuestos de aduana?", faq_a2: "Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales.", faq_q_dept: "¿Existe algun costo adicional por entregar a los departamentos?", faq_a_dept: "Si no eres del casco urbano de Granada, si, el precio adicional por entrega esta sujeto a cotizacion dependiendo del peso, usted pagará hasta que reciba los productos en sus manos.", faq_q_rel: "¿Pueden mis familiares mandar encomiendas personales?", faq_a_rel: "Si, tus familiares pueden enviarte encomiendas, solo tienen que rotular con la direccion correcta y especificar el tipo de envío.", faq_q_card: "¿No tengo tarjeta de crédito ni débito, ustedes pueden hacer la compra por mi?", faq_a_card: "¡Absolutamente! Hacemos la compra por ti totalmente GRATIS. Escríbenos al WhatsApp para asesorarte.",
+                steps_title: "¿Cómo importar con nosotros?", step1_title: "Regístrate", step1_desc: "Pide tu dirección Gratis en Estados Unidos por Whatsapp.", step2_title: "Compra", step2_desc: "Haz tus compras en tus tiendas favoritas como Amazon, Shein entre muchas más.", step3_title: "Notifica", step3_desc: "Envíanos tu factura y tracking para procesar tu paquete.", step4_title: "Recibe", step4_desc: "Recibe tus productos en Nicaragua y paga al recibir.",
+                faq_title: "Preguntas Frecuentes", faq_q1: "¿Cuáles son los tiempos de entrega?", faq_a1: "Aéreo: 1-3 días | Marítimo: 15-18 días.", faq_q2: "¿Cobran impuestos de aduana?", faq_a2: "No, no hay cargos ocultos ni adicionales por aduana, solamente pagas por el total de libras que pidas.", faq_q_dept: "¿Existe algun costo adicional por entregar a los departamentos?", faq_a_dept: "Si no eres del casco urbano de Granada, si, el precio adicional por entrega esta sujeto a cotizacion dependiendo del peso, usted pagará hasta que reciba los productos en sus manos.", faq_q_rel: "¿Pueden mis familiares mandar encomiendas personales?", faq_a_rel: "Si, tus familiares pueden enviarte encomiendas, solo tienen que rotular con la direccion correcta y especificar el tipo de envío.", faq_q_card: "¿No tengo tarjeta de crédito ni débito, ustedes pueden hacer la compra por mi?", faq_a_card: "¡Absolutamente! Hacemos la compra por ti totalmente GRATIS. Escríbenos al WhatsApp para asesorarte.",
                 map_title: "Nuestra Ubicación", map_address_detail: "Gasolinera Uno Guapinol 5 cuadras al norte, Granada, Nicaragua.",
                 footer_address: "Gasolinera Uno Guapinol 5 cuadras al norte, Granada, Nicaragua.", footer_sun: "Domingos: Cerrado",
-                chat_welcome_msg: "Hola 👋 ¿Cómo podemos ayudarte hoy?"
+                chat_welcome_msg: "Hola 👋 ¿Cómo podemos ayudarte hoy?",
+                item_shirt: "Camiseta", item_jeans: "Jeans", item_shoes: "Zapatos", item_perfume: "Perfume", item_book: "Libro",
+                air: "Aéreo", sea: "Marítimo"
             },
             en: {
                 nav_brand_top: "Importaciones", nav_home: "Home", nav_services: "Services", nav_calc: "Calculator", nav_faq: "FAQ", nav_contact: "Contact Us",
@@ -329,17 +340,24 @@
                 air_badge: "Fastest", air_title: "Air Shipping", air_desc: "Ideal for online shopping, clothes and electronics.", price_label: "Price per pound from:", air_f1: "Weekly departures", air_f2: "Package tracking",
                 sea_badge: "Best Price", sea_title: "Sea Shipping", sea_desc: "The best option for large boxes and moves.", sea_f1: "No weight limit", sea_f2: "Special rates for Entrepreneurs",
                 calc_title: "Estimate Your Shipping", calc_promo_note: "Rates updated for the holiday offer!", calc_helper_label: "Build your package (Product & Quantity):", calc_select_item: "-- Select an item --", calc_add_btn: "Add", calc_clear_all: "Clear all", calc_total_weight: "Weight", calc_label_weight: "Total Weight (lb)", calc_label_method: "Shipping Method", calc_result_label: "Estimated Cost:",
-                steps_title: "How to import with us?", step1_title: "Sign Up", step1_desc: "Get your FREE USA locker address via WhatsApp.", step2_title: "Buy", step2_desc: "Shop at your favorite stores and send to your locker.", step3_title: "Notify", step3_desc: "Send us your invoice and tracking to process your package.", step4_title: "Receive", step4_desc: "Receive your products in Nicaragua and pay on delivery.",
-                faq_title: "Frequently Asked Questions", faq_q1: "What are the delivery times?", faq_a1: "Air: 1-3 days | Sea: 15-18 days.", faq_q2: "Do you charge customs taxes?", faq_a2: "Our per-pound rate already includes customs handling for most personal items.", faq_q_dept: "Is there any additional cost for delivery to departments?", faq_a_dept: "If you are not from the urban area of Granada, yes, the extra delivery price is subject to weight quote. Pay on delivery.", faq_q_rel: "Can my relatives send personal parcels?", faq_a_rel: "Yes, your relatives can send you parcels, they just have to label it with the correct address and specify the type of shipping.", faq_q_card: "No credit card, can you buy for me?", faq_a_card: "Absolutely! We buy for you completely FREE. Contact us via WhatsApp for advice.",
+                steps_title: "How to import with us?", step1_title: "Sign Up", step1_desc: "Get your Free address in the United States via Whatsapp.", step2_title: "Buy", step2_desc: "Shop at your favorite stores like Amazon, Shein and many more.", step3_title: "Notify", step3_desc: "Send us your invoice and tracking to process your package.", step4_title: "Receive", step4_desc: "Receive your products in Nicaragua and pay on delivery.",
+                faq_title: "Frequently Asked Questions", faq_q1: "What are the delivery times?", faq_a1: "Air: 1-3 days | Sea: 15-18 days.", faq_q2: "Do you charge customs taxes?", faq_a2: "No, there are no hidden or additional customs charges, you only pay for the total number of pounds you order.", faq_q_dept: "Is there any additional cost for delivery to departments?", faq_a_dept: "If you are not from the urban area of Granada, yes, the extra delivery price is subject to weight quote. Pay on delivery.", faq_q_rel: "Can my relatives send personal parcels?", faq_a_rel: "Yes, your relatives can send you parcels, they just have to label it with the correct address and specify the type of shipping.", faq_q_card: "Don't have a credit card, can you buy for me?", faq_a_card: "Absolutely! We buy for you completely FREE. Contact us via WhatsApp for advice.",
                 map_title: "Our Location", map_address_detail: "Gasolinera Uno Guapinol 5 blocks north, Granada, Nicaragua.",
                 footer_address: "Gasolinera Uno Guapinol 5 blocks north, Granada, Nicaragua.", footer_sun: "Sundays: Closed",
-                chat_welcome_msg: "Hello 👋 How can we help you today?"
+                chat_welcome_msg: "Hello 👋 How can we help you today?",
+                item_shirt: "Shirt", item_jeans: "Jeans", item_shoes: "Shoes", item_perfume: "Perfume", item_book: "Book",
+                air: "Air", sea: "Sea"
             }
         };
 
         function applyPromoLogic() {
             const banner = document.getElementById('christmas-banner'), nav = document.getElementById('main-nav'), hero = document.getElementById('inicio');
             const airDisp = document.getElementById('air-price-display'), seaDisp = document.getElementById('sea-price-display');
+            const badge = document.getElementById('banner-prices-badge');
+            
+            const airTxt = currentLang === 'es' ? 'Aéreo' : 'Air', seaTxt = currentLang === 'es' ? 'Marítimo' : 'Sea';
+            badge.innerHTML = `${airTxt} <span class="text-red-600">$6.50</span> | ${seaTxt} <span class="text-red-600">$2.20</span>`;
+
             if (IS_PROMO) {
                 banner.classList.remove('hidden');
                 const height = banner.offsetHeight || 48;
@@ -350,7 +368,6 @@
                 airDisp.innerHTML = `<p class="text-3xl md:text-4xl font-bold text-red-600 line-through mr-2 inline-block">$7.00</p><p class="text-3xl md:text-4xl font-bold text-brand-blue inline-block">$${PROMO_AIR.toFixed(2)} <span class="text-sm md:text-lg text-gray-500 font-normal">/lb</span></p>`;
                 seaDisp.innerHTML = `<p class="text-3xl md:text-4xl font-bold text-red-600 line-through mr-2 inline-block">$2.50</p><p class="text-3xl md:text-4xl font-bold text-brand-blue inline-block">$${PROMO_SEA.toFixed(2)} <span class="text-sm md:text-lg text-gray-500 font-normal">/lb</span></p>`;
             }
-            const airTxt = currentLang === 'es' ? 'Aéreo' : 'Air', seaTxt = currentLang === 'es' ? 'Marítimo' : 'Sea';
             document.getElementById('method').options[0].textContent = `${airTxt} ($${currentAir.toFixed(2)}/lb)`;
             document.getElementById('method').options[1].textContent = `${seaTxt} ($${currentSea.toFixed(2)}/lb)`;
         }
@@ -358,7 +375,8 @@
         function addItemToList() {
             const sel = document.getElementById('item-estimator'), qtyInput = document.getElementById('item-quantity');
             const qty = parseInt(qtyInput.value); if (!sel.value || qty < 1) return;
-            selectedItems.push({ name: sel.options[sel.selectedIndex].text.split('(')[0].trim(), weight: parseFloat(sel.value) * qty, qty });
+            const key = sel.options[sel.selectedIndex].dataset.key;
+            selectedItems.push({ key: key, weight: parseFloat(sel.value) * qty, qty });
             renderItems(); sel.value = ""; qtyInput.value = 1;
         }
 
@@ -367,8 +385,9 @@
             list.innerHTML = ""; let total = 0;
             selectedItems.forEach((item, i) => {
                 total += item.weight;
+                const name = translations[currentLang][item.key] || item.key;
                 const li = document.createElement('li'); li.className = "flex justify-between items-center bg-blue-50 px-3 py-2 rounded-xl border border-blue-100 item-added";
-                li.innerHTML = `<span><b>${item.qty}x</b> ${item.name} (${item.weight.toFixed(1)} lb)</span><button onclick="removeItem(${i})" class="text-red-400 p-1"><i class="fa-solid fa-trash-can"></i></button>`;
+                li.innerHTML = `<span><b>${item.qty}x</b> ${name} (${item.weight.toFixed(1)} lb)</span><button onclick="removeItem(${i})" class="text-red-400 p-1"><i class="fa-solid fa-trash-can"></i></button>`;
                 list.appendChild(li);
             });
             cont.classList.toggle('hidden', selectedItems.length === 0);
@@ -392,17 +411,21 @@
 
         function toggleLanguage() {
             currentLang = currentLang === 'es' ? 'en' : 'es';
-            const icon = currentLang === 'es' ? '🇺🇸' : '🇳🇮';
-            const text = currentLang === 'es' ? 'EN' : 'ES';
-            document.getElementById('lang-icon').textContent = icon;
-            document.getElementById('lang-text').textContent = text;
-            document.getElementById('mobile-lang-icon').textContent = icon;
-            document.getElementById('mobile-lang-text').textContent = text;
+            document.getElementById('lang-icon').textContent = currentLang === 'es' ? '🇺🇸' : '🇳🇮';
+            document.getElementById('lang-text').textContent = currentLang.toUpperCase();
+            document.getElementById('mobile-lang-icon').textContent = currentLang === 'es' ? '🇺🇸' : '🇳🇮';
+            document.getElementById('mobile-lang-text').textContent = currentLang.toUpperCase();
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.dataset.translate;
                 if (translations[currentLang][key]) el.innerHTML = translations[currentLang][key];
             });
-            applyPromoLogic();
+            const estimator = document.getElementById('item-estimator');
+            estimator.options[1].textContent = translations[currentLang].item_shirt + " (0.5 lb)";
+            estimator.options[2].textContent = translations[currentLang].item_jeans + " (1.5 lb)";
+            estimator.options[3].textContent = translations[currentLang].item_shoes + " (2.5 lb)";
+            estimator.options[4].textContent = translations[currentLang].item_perfume + " (1.0 lb)";
+            estimator.options[5].textContent = translations[currentLang].item_book + " (1.5 lb)";
+            renderItems(); applyPromoLogic();
         }
 
         function toggleChat() {
