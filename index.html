@@ -37,7 +37,7 @@
             <p class="font-bold text-[10px] sm:text-xs md:text-base flex items-center justify-center flex-wrap gap-1 leading-tight">
                 <span class="christmas-tree">🎄</span> 
                 <span class="text-yellow-300 font-extrabold" data-translate="banner_title">¡Felices Fiestas!</span>
-                <span data-translate="banner_message">Solo por este Mes, aprovecha:</span>
+                <span data-translate="banner_message">Solo por este Mes, aprovecha nuestros precios especiales:</span>
                 <span class="bg-white text-brand-blue px-2 py-0.5 rounded-full font-black text-[11px] md:text-sm">
                     Aéreo <span class="text-red-600">$6.50</span> | Marítimo <span class="text-red-600">$2.20</span>
                 </span>
@@ -51,7 +51,7 @@
             <div class="flex justify-between h-16 md:h-20">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xgAKLo6JEWkQ7kNvwE978Za&_nc_oc=AdmWmKsydii9CTe4OvhqcNy159Y5tilcnjFidK4CsUhtxxt5Yv-Kt3pbKDXs5CGxJC-xvNngA5vyXfQgrkGkbRDS&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=vgfgPNVj2iSSO_DdTcHE-w&oh=00_Afnn68pFnJxQUffC0gi5yy33yseNqhdVsfNZnpyfr8Oqrg&oe=69579781" alt="Importaciones Mikompra Logo" class="h-10 md:h-16 w-auto object-contain">
+                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xgAKLo6JEWkQ7kNvwE978Za&_nc_oc=AdmWmKsydii9CTe4OvhqcNy159Y5tilcnjFidK4CsUhtxxt5Yv-Kt3pbKDXs5CGxJC-xvNngA5vyXfQgrkGkbRDS&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=vgfgPNVj2iSSO_DdTcHE-w&oh=00_Afnn68pFnJxQUffC0gi5yy33yseNqhdVsfNZnpyfr8Oqrg&oe=69579781" alt="Logo" class="h-10 md:h-16 w-auto object-contain">
                         <div class="ml-2 md:ml-3 flex flex-col justify-center text-brand-blue leading-none">
                             <span class="text-[9px] md:text-sm font-bold tracking-widest uppercase" data-translate="nav_brand_top">Importaciones</span>
                             <span class="text-lg md:text-2xl font-black tracking-tighter">Mikompra</span>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="lg:hidden flex items-center gap-2">
                     <button onclick="toggleLanguage()" class="flex items-center gap-1 border border-gray-200 rounded-lg px-2 py-1 bg-gray-50">
-                        <span id="mobile-lang-icon" class="text-lg">🇺🇸</span>
+                        <span id="mobile-lang-icon">🇺🇸</span>
                         <span id="mobile-lang-text" class="text-xs font-bold text-gray-600">EN</span>
                     </button>
                     <button id="mobile-menu-button" class="text-brand-blue text-2xl focus:outline-none p-1"><i class="fa-solid fa-bars"></i></button>
@@ -86,10 +86,10 @@
         </div>
     </nav>
 
-    <section id="inicio" class="hero-bg h-[80vh] md:h-screen flex items-center justify-center text-center px-4 transition-all duration-300">
+    <section id="inicio" class="hero-bg h-[80vh] md:h-screen flex items-center justify-center text-center px-4 pt-20 transition-all duration-300">
         <div class="max-w-4xl mx-auto text-white">
             <h1 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight" data-translate="hero_title">Traemos tus compras de USA <br class="hidden md:block"> directo a Nicaragua</h1>
-            <p class="text-lg md:text-2xl mb-8 text-gray-200" data-translate="hero_subtitle">Rápido y seguro</p>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200" data-translate="hero_subtitle">Rápido y seguro</p>
             <a href="#calculadora" class="inline-block bg-brand-orange text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition shadow-2xl">
                 <i class="fa-solid fa-calculator mr-2"></i> <span data-translate="hero_btn_quote">Cotizar Envío</span>
             </a>
@@ -97,8 +97,8 @@
     </section>
 
     <section class="py-12 bg-gray-100" id="stats-section">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-2 gap-4 md:gap-8 text-center">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="grid grid-cols-2 gap-4 md:gap-8">
                 <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-200">
                     <p class="text-4xl md:text-5xl font-extrabold text-brand-blue mb-1"><span class="counter" data-target="5">0</span></p>
                     <p class="text-gray-500 text-xs md:text-base font-medium uppercase tracking-wider" data-translate="stat_2_desc">Años de Experiencia</p>
@@ -160,7 +160,7 @@
                 <p id="calc-promo-note" class="text-yellow-300 font-bold text-sm md:text-lg hidden" data-translate="calc_promo_note"></p>
             </div>
             <div class="bg-white rounded-3xl shadow-2xl p-4 md:p-10">
-                <div class="mb-6 p-4 md:p-6 bg-blue-50 border border-blue-100 rounded-2xl text-left">
+                <div class="mb-6 p-4 md:p-6 bg-blue-50 border border-blue-100 rounded-2xl text-left text-gray-700">
                     <label class="block text-sm font-bold mb-3 text-brand-blue" data-translate="calc_helper_label">Arma tu paquete (Producto y Cantidad):</label>
                     <div class="flex flex-col md:flex-row gap-3">
                         <select id="item-estimator" class="flex-[3] p-3 border border-gray-300 rounded-xl text-sm md:text-base">
@@ -173,7 +173,7 @@
                         </select>
                         <div class="flex gap-2">
                             <input type="number" id="item-quantity" value="1" min="1" class="w-20 md:w-24 p-3 border border-gray-300 rounded-xl text-center font-bold">
-                            <button onclick="addItemToList()" class="flex-1 md:flex-none bg-brand-orange text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition shadow-md" data-translate="calc_add_btn">Agregar</button>
+                            <button onclick="addItemToList()" class="flex-1 md:flex-none bg-brand-orange text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition" data-translate="calc_add_btn">Agregar</button>
                         </div>
                     </div>
                     <div id="items-list-container" class="hidden mt-6">
@@ -198,7 +198,7 @@
                     </div>
                 </div>
                 <div id="result" class="hidden mt-6 p-6 md:p-8 bg-blue-50 rounded-2xl border-2 border-brand-blue border-dashed text-center">
-                    <p class="text-gray-500 text-sm md:text-base mb-1" data-translate="calc_result_label">Costo Estimado de Envío:</p>
+                    <p class="text-gray-500 text-sm md:text-base mb-1" data-translate="calc_result_label">Costo Estimado:</p>
                     <p class="text-4xl md:text-6xl font-black text-brand-blue" id="cost-display">$0.00</p>
                 </div>
             </div>
@@ -221,23 +221,23 @@
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-brand-blue mb-12" data-translate="faq_title">Preguntas Frecuentes</h2>
             <div class="space-y-4">
-                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left">
+                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left text-gray-700">
                     <summary class="flex justify-between items-center font-bold text-sm md:text-lg text-gray-800"><span data-translate="faq_q1">¿Cuáles son los tiempos de entrega?</span><i class="fa-solid fa-chevron-down text-brand-orange transition group-open:rotate-180"></i></summary>
                     <p class="text-gray-600 mt-4 text-sm md:text-base leading-relaxed" data-translate="faq_a1"><strong>Aéreo:</strong> 1-3 días hábiles.<br><strong>Marítimo:</strong> 15-18 días hábiles.</p>
                 </details>
-                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left">
+                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left text-gray-700">
                     <summary class="flex justify-between items-center font-bold text-sm md:text-lg text-gray-800"><span data-translate="faq_q2">¿Cobran impuestos de aduana?</span><i class="fa-solid fa-chevron-down text-brand-orange transition group-open:rotate-180"></i></summary>
                     <p class="text-gray-600 mt-4 text-sm md:text-base" data-translate="faq_a2">Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales.</p>
                 </details>
-                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left">
+                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left text-gray-700">
                     <summary class="flex justify-between items-center font-bold text-sm md:text-lg text-gray-800"><span data-translate="faq_q_dept">¿Existe algun costo adicional por entregar a los departamentos?</span><i class="fa-solid fa-chevron-down text-brand-orange transition group-open:rotate-180"></i></summary>
                     <p class="text-gray-600 mt-4 text-sm md:text-base" data-translate="faq_a_dept">Si no eres del casco urbano de Granada, si, el precio adicional por entrega esta sujeto a cotizacion dependiendo del peso, usted pagará hasta que reciba los productos en sus manos.</p>
                 </details>
-                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left">
+                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left text-gray-700">
                     <summary class="flex justify-between items-center font-bold text-sm md:text-lg text-gray-800"><span data-translate="faq_q_rel">¿Pueden mis familiares mandar encomiendas personales?</span><i class="fa-solid fa-chevron-down text-brand-orange transition group-open:rotate-180"></i></summary>
                     <p class="text-gray-600 mt-4 text-sm md:text-base" data-translate="faq_a_rel">Si, tus familiares pueden enviarte encomiendas, solo tienen que rotular con la direccion correcta y especificar el tipo de envío.</p>
                 </details>
-                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left">
+                <details class="group bg-gray-50 rounded-2xl p-4 md:p-6 cursor-pointer border border-gray-200 text-left text-gray-700">
                     <summary class="flex justify-between items-center font-bold text-sm md:text-lg text-gray-800"><span data-translate="faq_q_card">No tengo tarjeta de crédito ni débito, ustedes pueden hacer la compra por mi?</span><i class="fa-solid fa-chevron-down text-brand-orange transition group-open:rotate-180"></i></summary>
                     <p class="text-gray-600 mt-4 text-sm md:text-base font-bold text-brand-blue" data-translate="faq_a_card">¡Absolutamente! Hacemos la compra por ti totalmente GRATIS. Escríbenos al WhatsApp para asesorarte.</p>
                 </details>
@@ -248,31 +248,35 @@
     <section class="py-16 bg-gray-100 text-center">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-brand-blue mb-8" data-translate="map_title">Nuestra Ubicación</h2>
-            <div class="rounded-3xl overflow-hidden shadow-xl h-64 md:h-96 mb-6">
+            <div class="rounded-3xl overflow-hidden shadow-xl h-64 md:h-96 mb-6 border border-gray-200">
                 <iframe src="https://maps.google.com/maps?q=Granada,Nicaragua&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <p class="text-gray-500 font-medium" data-translate="map_address_detail">Gasolinera UNO Guapinol, Granada, Nicaragua.</p>
+            <p class="text-gray-500 font-medium" data-translate="map_address_detail">Gasolinera Uno Guapinol 5 cuadras al norte, Granada, Nicaragua.</p>
         </div>
     </section>
 
     <footer id="contacto" class="bg-gray-900 text-white py-12 md:py-20">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center sm:text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center sm:text-left text-gray-400">
                 <div>
                     <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xgAKLo6JEWkQ7kNvwE978Za&_nc_oc=AdmWmKsydii9CTe4OvhqcNy159Y5tilcnjFidK4CsUhtxxt5Yv-Kt3pbKDXs5CGxJC-xvNngA5vyXfQgrkGkbRDS&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=vgfgPNVj2iSSO_DdTcHE-w&oh=00_Afnn68pFnJxQUffC0gi5yy33yseNqhdVsfNZnpyfr8Oqrg&oe=69579781" class="h-16 mx-auto sm:mx-0 mb-6 rounded-xl shadow-lg">
-                    <p class="text-gray-400 text-sm" data-translate="footer_desc">Tu puente logístico confiable hacia Nicaragua.</p>
+                    <p class="text-sm" data-translate="footer_desc">Tu puente logístico confiable hacia Nicaragua.</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-brand-orange uppercase tracking-widest">Contacto</h4>
-                    <ul class="space-y-4 text-gray-400 text-sm">
-                        <li class="flex items-center justify-center sm:justify-start gap-3"><i class="fa-solid fa-location-dot text-brand-light"></i> Granada, Nicaragua.</li>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center justify-center sm:justify-start gap-3"><i class="fa-solid fa-location-dot text-brand-light"></i> <span data-translate="footer_address">Gasolinera Uno Guapinol 5 cuadras al norte, Granada, Nicaragua.</span></li>
                         <li class="flex items-center justify-center sm:justify-start gap-3"><i class="fa-brands fa-whatsapp text-green-500"></i> <a href="https://wa.me/50588826162">+505 8882-6162</a></li>
                         <li class="flex items-center justify-center sm:justify-start gap-3"><i class="fa-solid fa-envelope text-brand-light"></i> <span class="break-all">importacionesmikompra@gmail.com</span></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-brand-orange uppercase tracking-widest">Horario</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm"><li>Lunes - Viernes: 8:00 AM - 5:00 PM</li><li>Sábados: 8:00 AM - 12:00 MD</li></ul>
+                    <ul class="space-y-2 text-sm">
+                        <li>Lunes - Viernes: 8:00 AM - 5:00 PM</li>
+                        <li>Sábados: 8:00 AM - 12:00 MD</li>
+                        <li class="text-red-400 font-bold" data-translate="footer_sun">Domingos: Cerrado</li>
+                    </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-brand-orange uppercase tracking-widest">Síguenos</h4>
@@ -291,7 +295,7 @@
     </div>
     <div id="chat-window" class="fixed bottom-24 right-6 w-[85vw] md:w-80 bg-white rounded-3xl shadow-2xl z-50 hidden overflow-hidden transform transition-all duration-300 origin-bottom-right scale-0 opacity-0 border border-gray-200">
         <div class="bg-brand-blue p-4 flex justify-between items-center text-white"><h4 class="font-bold text-sm">Soporte Mikompra</h4><button onclick="toggleChat()"><i class="fa-solid fa-xmark"></i></button></div>
-        <div class="p-5 bg-gray-100 h-64 overflow-y-auto text-xs md:text-sm" data-translate="chat_welcome_msg">Hola 👋 ¿Cómo podemos ayudarte hoy?</div>
+        <div class="p-5 bg-gray-100 h-64 overflow-y-auto text-xs md:text-sm text-gray-700" data-translate="chat_welcome_msg">Hola 👋 ¿Cómo podemos ayudarte hoy?</div>
         <div class="p-3 bg-white border-t"><form onsubmit="sendToWhatsapp(event)" class="flex gap-2"><input type="text" id="chat-input" placeholder="..." class="flex-1 bg-gray-100 rounded-2xl px-4 py-2 text-sm focus:outline-none" required><button type="submit" class="bg-green-500 text-white w-10 h-10 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-paper-plane text-sm"></i></button></form></div>
     </div>
 
@@ -316,8 +320,8 @@
                 calc_title: "Calcula tu Envío Estimado", calc_promo_note: "¡Tarifas actualizadas por oferta navideña!", calc_helper_label: "Arma tu paquete (Producto y Cantidad):", calc_select_item: "-- Selecciona un artículo --", calc_add_btn: "Agregar", calc_clear_all: "Borrar todo", calc_total_weight: "Peso", calc_label_weight: "Peso Total (lb)", calc_label_method: "Método de Envío", calc_result_label: "Costo Estimado:",
                 steps_title: "¿Cómo importar con nosotros?", step1_title: "Regístrate", step1_desc: "Pide tu dirección de casillero GRATIS en USA por WhatsApp.", step2_title: "Compra", step2_desc: "Haz tus compras en tus tiendas favoritas y envíalas a tu casillero.", step3_title: "Notifica", step3_desc: "Envíanos tu factura y tracking para procesar tu paquete.", step4_title: "Recibe", step4_desc: "Recibe tus productos en Nicaragua y paga al recibir.",
                 faq_title: "Preguntas Frecuentes", faq_q1: "¿Cuáles son los tiempos de entrega?", faq_a1: "Aéreo: 1-3 días | Marítimo: 15-18 días.", faq_q2: "¿Cobran impuestos de aduana?", faq_a2: "Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales.", faq_q_dept: "¿Existe algun costo adicional por entregar a los departamentos?", faq_a_dept: "Si no eres del casco urbano de Granada, si, el precio adicional por entrega esta sujeto a cotizacion dependiendo del peso, usted pagará hasta que reciba los productos en sus manos.", faq_q_rel: "¿Pueden mis familiares mandar encomiendas personales?", faq_a_rel: "Si, tus familiares pueden enviarte encomiendas, solo tienen que rotular con la direccion correcta y especificar el tipo de envío.", faq_q_card: "No tengo tarjeta de crédito ni débito, ustedes pueden hacer la compra por mi?", faq_a_card: "¡Absolutamente! Hacemos la compra por ti totalmente GRATIS. Escríbenos al WhatsApp para asesorarte.",
-                map_title: "Nuestra Ubicación", map_address_detail: "Gasolinera UNO Guapinol, Granada, Nicaragua.",
-                footer_desc: "Tu puente logístico confiable hacia Nicaragua.",
+                map_title: "Nuestra Ubicación", map_address_detail: "Gasolinera Uno Guapinol 5 cuadras al norte, Granada, Nicaragua.",
+                footer_address: "Gasolinera Uno Guapinol 5 cuadras al norte, Granada, Nicaragua.", footer_sun: "Domingos: Cerrado",
                 chat_welcome_msg: "Hola 👋 ¿Cómo podemos ayudarte hoy?"
             },
             en: {
@@ -328,11 +332,11 @@
                 services_title: "Our Services", services_promo_alert: "TAKE ADVANTAGE OF OUR CHRISTMAS PRICES!",
                 air_badge: "Fastest", air_title: "Air Shipping", air_desc: "Ideal for online shopping, clothes and electronics.", price_label: "Price per pound from:", air_f1: "Weekly departures", air_f2: "Package tracking",
                 sea_badge: "Best Price", sea_title: "Sea Shipping", sea_desc: "The best option for large boxes and moves.", sea_f1: "No weight limit", sea_f2: "Special rates for Entrepreneurs",
-                calc_title: "Calculate Your Estimated Shipping", calc_promo_note: "Rates updated for the holiday offer!", calc_helper_label: "Build your package (Product & Quantity):", calc_select_item: "-- Select an item --", calc_add_btn: "Add", calc_clear_all: "Clear all", calc_total_weight: "Weight", calc_label_weight: "Total Weight (lb)", calc_label_method: "Shipping Method", calc_result_label: "Estimated Cost:",
+                calc_title: "Estimate Your Shipping", calc_promo_note: "Rates updated for the holiday offer!", calc_helper_label: "Build your package (Product & Quantity):", calc_select_item: "-- Select an item --", calc_add_btn: "Add", calc_clear_all: "Clear all", calc_total_weight: "Weight", calc_label_weight: "Total Weight (lb)", calc_label_method: "Shipping Method", calc_result_label: "Estimated Cost:",
                 steps_title: "How to import with us?", step1_title: "Sign Up", step1_desc: "Get your FREE USA locker address via WhatsApp.", step2_title: "Buy", step2_desc: "Shop at your favorite stores and send to your locker.", step3_title: "Notify", step3_desc: "Send us your invoice and tracking to process your package.", step4_title: "Receive", step4_desc: "Receive your products in Nicaragua and pay on delivery.",
                 faq_title: "Frequently Asked Questions", faq_q1: "What are the delivery times?", faq_a1: "Air: 1-3 days | Sea: 15-18 days.", faq_q2: "Do you charge customs taxes?", faq_a2: "Our per-pound rate already includes customs handling for most personal items.", faq_q_dept: "Is there any additional cost for delivery to departments?", faq_a_dept: "If you are not from the urban area of Granada, yes, the extra delivery price is subject to weight quote. Pay on delivery.", faq_q_rel: "Can my relatives send personal parcels?", faq_a_rel: "Yes, your relatives can send you parcels, they just have to label it with the correct address and specify the type of shipping.", faq_q_card: "I don't have a credit card, can you buy for me?", faq_a_card: "Absolutely! We buy for you completely FREE. Contact us via WhatsApp for advice.",
-                map_title: "Our Location", map_address_detail: "UNO Guapinol Gas Station, Granada, Nicaragua.",
-                footer_desc: "Your reliable logistics bridge to Nicaragua.",
+                map_title: "Our Location", map_address_detail: "Gasolinera Uno Guapinol 5 blocks north, Granada, Nicaragua.",
+                footer_address: "Gasolinera Uno Guapinol 5 blocks north, Granada, Nicaragua.", footer_sun: "Sundays: Closed",
                 chat_welcome_msg: "Hello 👋 How can we help you today?"
             }
         };
@@ -368,8 +372,8 @@
             list.innerHTML = ""; let total = 0;
             selectedItems.forEach((item, i) => {
                 total += item.weight;
-                const li = document.createElement('li'); li.className = "flex justify-between items-center bg-gray-50 p-3 rounded-xl border border-gray-100 item-added";
-                li.innerHTML = `<span class='text-xs md:text-sm'><b>${item.qty}x</b> ${item.name} (${item.weight.toFixed(1)} lb)</span><button onclick="removeItem(${i})" class="text-red-400 p-1"><i class="fa-solid fa-trash-can"></i></button>`;
+                const li = document.createElement('li'); li.className = "flex justify-between items-center bg-blue-50 px-3 py-2 rounded-xl border border-blue-100 item-added";
+                li.innerHTML = `<span><b>${item.qty}x</b> ${item.name} (${item.weight.toFixed(1)} lb)</span><button onclick="removeItem(${i})" class="text-red-400 p-1"><i class="fa-solid fa-trash-can"></i></button>`;
                 list.appendChild(li);
             });
             cont.classList.toggle('hidden', selectedItems.length === 0);
@@ -415,13 +419,16 @@
 
         function sendToWhatsapp(e) { e.preventDefault(); window.open(`https://wa.me/50588826162?text=${encodeURIComponent(document.getElementById('chat-input').value)}`, '_blank'); }
 
-        function startCounter(el, target) {
-            let curr = 0; const duration = 2000, stepTime = 50; const increment = target / (duration / stepTime);
-            const timer = setInterval(() => { curr += increment; if (curr >= target) { el.textContent = target; clearInterval(timer); } else { el.textContent = Math.floor(curr); } }, stepTime);
-        }
-
         const counterObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.querySelectorAll('.counter').forEach(c => startCounter(c, parseInt(c.dataset.target))); counterObserver.unobserve(entry.target); } });
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.counter').forEach(c => {
+                        let curr = 0; const target = parseInt(c.dataset.target), step = target / 50;
+                        const t = setInterval(() => { curr += step; if (curr >= target) { c.textContent = target; clearInterval(t); } else { c.textContent = Math.floor(curr); } }, 50);
+                    });
+                    counterObserver.unobserve(entry.target);
+                }
+            });
         }, { threshold: 0.1 });
 
         document.addEventListener('DOMContentLoaded', () => {
