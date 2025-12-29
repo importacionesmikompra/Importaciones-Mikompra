@@ -17,14 +17,12 @@
         }
         .smooth-scroll { scroll-behavior: smooth; }
         
-        /* Animación para la burbuja de chat */
         @keyframes bounce-slow {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
         .animate-bounce-slow { animation: bounce-slow 3s infinite; }
 
-        /* Estilos para el acordeón de FAQ */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary ~ * { animation: sweep .5s ease-in-out; }
@@ -33,26 +31,24 @@
             100%  {opacity: 1; transform: translateY(0)}
         }
 
-        /* Estilos específicos del banner navideño */
         .christmas-banner {
-            background-color: #A32A29; /* Rojo oscuro navideño */
+            background-color: #A32A29;
             color: white;
             padding: 1rem 0;
-            z-index: 55; /* Más alto que la navegación para que se vea bien */
+            z-index: 55;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .christmas-tree {
-            color: #228B22; /* Verde abeto */
+            color: #228B22;
             font-size: 1.5rem;
             margin-right: 0.5rem;
         }
 
-        /* Animación para agregar items a la lista */
+        .item-added { animation: fadeIn 0.3s ease-out; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-5px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .item-added { animation: fadeIn 0.3s ease-out; }
     </style>
     <script>
         tailwind.config = {
@@ -104,7 +100,6 @@
                     <a href="#calculadora" class="text-gray-600 hover:text-brand-blue transition font-medium" data-translate="nav_calc">Calculadora</a>
                     <a href="#faq" class="text-gray-600 hover:text-brand-blue transition font-medium" data-translate="nav_faq">Preguntas</a>
                     <a href="#contacto" class="bg-brand-orange text-white px-5 py-2 rounded-full hover:bg-orange-600 transition font-medium shadow-md" data-translate="nav_contact">Contáctanos</a>
-                    
                     <button onclick="toggleLanguage()" class="flex items-center gap-2 border border-gray-300 rounded-full px-3 py-1 hover:bg-gray-100 transition ml-2">
                         <span id="lang-icon" class="text-lg">🇺🇸</span>
                         <span id="lang-text" class="text-sm font-bold text-gray-600">EN</span>
@@ -133,7 +128,7 @@
     <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-20 transition-all duration-300">
         <div class="max-w-4xl mx-auto text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-translate="hero_title">Traemos tus compras de USA <br> directo a Nicaragua</h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-200" data-translate="hero_subtitle">Rápido, seguro y con las mejores tarifas del mercado. Aéreo y Marítimo.</p>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200" data-translate="hero_subtitle">Rápido y seguro</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#calculadora" class="bg-brand-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 transition shadow-lg transform hover:-translate-y-1">
                     <i class="fa-solid fa-calculator mr-2"></i> <span data-translate="hero_btn_quote">Cotizar Envío</span>
@@ -145,13 +140,9 @@
         </div>
     </section>
 
-    <section class="py-12 bg-gray-100">
+    <section class="py-12 bg-gray-100" id="stats-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="stats-container">
-                <div>
-                    <p class="text-5xl font-extrabold text-brand-blue mb-2"><span class="counter" data-target="3000">0</span>+</p>
-                    <p class="text-gray-600 font-medium" data-translate="stat_1_desc">Paquetes Entregados</p>
-                </div>
+            <div class="grid grid-cols-2 gap-8 text-center">
                 <div>
                     <p class="text-5xl font-extrabold text-brand-blue mb-2"><span class="counter" data-target="5">0</span></p>
                     <p class="text-gray-600 font-medium" data-translate="stat_2_desc">Años de Experiencia</p>
@@ -159,10 +150,6 @@
                 <div>
                     <p class="text-5xl font-extrabold text-brand-blue mb-2"><span class="counter" data-target="15">0</span></p>
                     <p class="text-gray-600 font-medium" data-translate="stat_3_desc">Departamentos de Nicaragua</p>
-                </div>
-                <div>
-                    <p class="text-5xl font-extrabold text-brand-blue mb-2">$<span class="counter" data-target="100">0</span>K+</p>
-                    <p class="text-gray-600 font-medium" data-translate="stat_4_desc">En Compras Asistidas</p>
                 </div>
             </div>
         </div>
@@ -177,117 +164,77 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition border border-gray-100 relative overflow-hidden group">
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 bg-brand-light text-white px-4 py-1 rounded-bl-lg font-bold text-sm" data-translate="air_badge">Más Rápido</div>
-                    <div class="flex items-center justify-center w-16 h-16 bg-blue-50 text-brand-blue rounded-full mb-6 text-3xl">
-                        <i class="fa-solid fa-plane-departure"></i>
-                    </div>
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-50 text-brand-blue rounded-full mb-6 text-3xl"><i class="fa-solid fa-plane-departure"></i></div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-4" data-translate="air_title">Envío Aéreo</h3>
-                    <p class="text-gray-600 mb-6" data-translate="air_desc">Ideal para compras en línea, ropa, electrónicos pequeños y documentos. Recibe tus paquetes en tiempo récord.</p>
+                    <p class="text-gray-600 mb-6" data-translate="air_desc">Ideal para compras en línea, ropa, electrónicos pequeños y documentos.</p>
                     <div class="border-t border-gray-200 pt-6">
                         <p class="text-sm text-gray-500 mb-1" data-translate="price_label">Precio por libra desde:</p>
-                        <div id="air-price-display">
-                            <p class="text-4xl font-bold text-brand-blue inline-block">$7.00 <span class="text-lg text-gray-500 font-normal">/lb</span></p>
-                        </div>
+                        <div id="air-price-display"><p class="text-4xl font-bold text-brand-blue inline-block">$7.00 <span class="text-lg text-gray-500 font-normal">/lb</span></p></div>
                     </div>
-                    <ul class="mt-6 space-y-3">
-                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-check text-brand-light mr-2"></i> <span data-translate="air_f1">Salidas semanales</span></li>
-                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-check text-brand-light mr-2"></i> <span data-translate="air_f2">Entregas a todo el país vía Cargo Trans</span></li>
-                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-check text-brand-light mr-2"></i> <span data-translate="air_f3">Rastreo de paquete</span></li>
-                    </ul>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition border border-gray-100 relative overflow-hidden group">
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 bg-brand-orange text-white px-4 py-1 rounded-bl-lg font-bold text-sm" data-translate="sea_badge">Mejor Precio</div>
-                    <div class="flex items-center justify-center w-16 h-16 bg-orange-50 text-brand-orange rounded-full mb-6 text-3xl">
-                        <i class="fa-solid fa-ship"></i>
-                    </div>
+                    <div class="flex items-center justify-center w-16 h-16 bg-orange-50 text-brand-orange rounded-full mb-6 text-3xl"><i class="fa-solid fa-ship"></i></div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-4" data-translate="sea_title">Envío Marítimo</h3>
-                    <p class="text-gray-600 mb-6" data-translate="sea_desc">La mejor opción para cajas grandes, mudanzas, repuestos pesados o electrodomésticos. Economía garantizada.</p>
+                    <p class="text-gray-600 mb-6" data-translate="sea_desc">La mejor opción para cajas grandes, mudanzas o electrodomésticos.</p>
                     <div class="border-t border-gray-200 pt-6">
                         <p class="text-sm text-gray-500 mb-1" data-translate="price_label">Precio por libra desde:</p>
-                        <div id="sea-price-display">
-                            <p class="text-4xl font-bold text-brand-blue inline-block">$2.50 <span class="text-lg text-gray-500 font-normal">/lb</span></p>
-                        </div>
+                        <div id="sea-price-display"><p class="text-4xl font-bold text-brand-blue inline-block">$2.50 <span class="text-lg text-gray-500 font-normal">/lb</span></p></div>
                     </div>
-                    <ul class="mt-6 space-y-3">
-                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-check text-brand-light mr-2"></i> <span data-translate="sea_f1">Sin límite de peso</span></li>
-                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-check text-brand-light mr-2"></i> <span data-translate="sea_f2">Entregas a todo el país vía Cargo Trans</span></li>
-                        <li class="flex items-center text-gray-600"><i class="fa-solid fa-check text-brand-light mr-2"></i> <span data-translate="sea_f3">Tarifas especiales por volumen</span></li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="calculadora" class="py-20 bg-brand-blue text-white">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-10">
+        <div class="max-w-4xl mx-auto px-4 text-gray-800">
+            <div class="text-center mb-10 text-white">
                 <h2 class="text-3xl font-bold mb-4" data-translate="calc_title">Calcula tu Envío Estimado</h2>
                 <p id="calc-promo-note" class="text-yellow-300 font-bold mb-4 hidden" data-translate="calc_promo_note"></p>
                 <p class="opacity-80" data-translate="calc_desc">Obtén un estimado rápido de cuánto costará traer tu paquete a Nicaragua.</p>
             </div>
 
-            <div class="bg-white rounded-xl shadow-2xl p-6 md:p-10 text-gray-800">
-                
+            <div class="bg-white rounded-xl shadow-2xl p-6 md:p-10">
                 <div class="mb-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
                     <label class="block text-sm font-bold mb-2 text-brand-blue" data-translate="calc_helper_label">Arma tu paquete (Selecciona producto y cantidad):</label>
-                    
                     <div class="flex flex-col md:flex-row gap-2 mb-3">
                         <select id="item-estimator" class="flex-[2] p-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-brand-blue">
                             <option value="" selected disabled>-- Selecciona un artículo --</option>
-                            <optgroup label="Ropa / Clothing (Shein/Amazon)">
+                            <optgroup label="Ropa / Clothing">
                                 <option value="0.5" data-name="Camiseta / Top">Camiseta / Top (0.5 lb)</option>
                                 <option value="1.5" data-name="Jeans / Pantalón">Jeans / Pantalón (1.5 lb)</option>
                                 <option value="0.8" data-name="Vestido / Dress">Vestido / Dress (0.8 lb)</option>
-                                <option value="0.3" data-name="Ropa Interior">Ropa Interior (0.3 lb)</option>
-                                <option value="2.0" data-name="Chaqueta / Jacket">Chaqueta / Jacket (2.0 lb)</option>
-                            </optgroup>
-                            <optgroup label="Accesorios / Accessories">
-                                <option value="0.2" data-name="Case de Celular">Case de Celular (0.2 lb)</option>
-                                <option value="0.5" data-name="Cartera Pequeña">Cartera Pequeña (0.5 lb)</option>
-                                <option value="1.0" data-name="Bolso / Cartera">Bolso / Cartera (1.0 lb)</option>
-                                <option value="0.3" data-name="Joyería / Bisutería">Joyería / Bisutería (0.3 lb)</option>
                             </optgroup>
                             <optgroup label="Calzado / Footwear">
                                 <option value="2.5" data-name="Tenis / Sneakers">Tenis / Sneakers (2.5 lb)</option>
-                                <option value="1.5" data-name="Sandalias">Sandalias (1.5 lb)</option>
                                 <option value="4.0" data-name="Botas">Botas (4.0 lb)</option>
                             </optgroup>
-                            <optgroup label="Tecnología / Tech">
-                                <option value="1.0" data-name="Celular">Celular / Phone (1.0 lb)</option>
-                                <option value="2.0" data-name="Tablet">Tablet / iPad (2.0 lb)</option>
-                                <option value="6.0" data-name="Laptop">Laptop (6.0 lb)</option>
-                            </optgroup>
                         </select>
-
-                        <div class="w-full md:w-24">
-                            <input type="number" id="item-quantity" value="1" min="1" class="w-full p-2 border border-gray-300 rounded-lg text-sm text-center focus:outline-none focus:border-brand-blue" placeholder="Cant.">
-                        </div>
-
+                        <div class="w-full md:w-24"><input type="number" id="item-quantity" value="1" min="1" class="w-full p-2 border border-gray-300 rounded-lg text-sm text-center"></div>
                         <button onclick="addItemToList()" class="bg-brand-orange text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600 transition flex items-center justify-center shadow-sm">
                             <i class="fa-solid fa-plus mr-1"></i> Agregar
                         </button>
                     </div>
-
                     <div id="items-list-container" class="hidden">
-                        <p class="text-xs text-gray-500 mb-2 font-bold uppercase tracking-wide">Tus Artículos Seleccionados:</p>
-                        <ul id="items-list" class="space-y-2 mb-3 max-h-40 overflow-y-auto">
-                            </ul>
+                        <ul id="items-list" class="space-y-2 mb-3 max-h-40 overflow-y-auto text-sm"></ul>
                         <div class="flex justify-between items-center border-t border-gray-200 pt-2">
-                            <button onclick="clearItemsList()" class="text-xs text-red-500 hover:text-red-700 underline">Borrar todo</button>
+                            <button onclick="clearItemsList()" class="text-xs text-red-500 underline">Borrar todo</button>
                             <p class="text-sm font-bold text-brand-blue">Total Peso: <span id="total-weight-display">0.0</span> lb</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-bold mb-2" data-translate="calc_label_weight">Peso Total (lb)</label>
-                        <input type="number" id="weight" step="0.1" placeholder="Ej: 5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-blue font-bold bg-white" min="0.1" oninput="calculateShipping()">
+                        <input type="number" id="weight" step="0.1" placeholder="Ej: 5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-blue font-bold" min="0.1" oninput="calculateShipping()">
                     </div>
                     <div>
                         <label class="block text-sm font-bold mb-2" data-translate="calc_label_method">Método de Envío</label>
-                        <select id="method" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-blue" onchange="calculateShipping()">
+                        <select id="method" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none" onchange="calculateShipping()">
                             <option value="air" data-translate="calc_opt_air">Aéreo ($7.00/lb)</option>
                             <option value="sea" data-translate="calc_opt_sea">Marítimo ($2.50/lb)</option>
                         </select>
@@ -297,7 +244,6 @@
                 <div id="result" class="hidden mt-8 p-4 bg-gray-100 rounded-lg border-l-4 border-brand-blue text-center">
                     <p class="text-gray-600" data-translate="calc_result_label">Costo Estimado:</p>
                     <p class="text-4xl font-bold text-brand-blue" id="cost-display">$0.00</p>
-                    <p class="text-xs text-gray-500 mt-2" data-translate="calc_disclaimer">*Tarifas sujetas a cambios y dimensiones del paquete.</p>
                 </div>
             </div>
         </div>
@@ -305,115 +251,22 @@
 
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-brand-blue mb-4" data-translate="testim_title">Lo que dicen nuestros clientes</h2>
-                <div class="w-24 h-1 bg-brand-orange mx-auto rounded"></div>
-            </div>
-            
+            <div class="text-center mb-16"><h2 class="text-3xl font-bold text-brand-blue mb-4" data-translate="testim_title">Lo que dicen nuestros clientes</h2><div class="w-24 h-1 bg-brand-orange mx-auto rounded"></div></div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6 italic" data-translate="testim_1_text">"Excelente servicio, traje todos los repuestos para mi taller desde Miami y el envío marítimo fue súper económico. Recomendados."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-white font-bold">CR</div>
-                        <div>
-                            <p class="font-bold text-sm">Carlos Ruiz</p>
-                            <p class="text-xs text-gray-500">Managua</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6 italic" data-translate="testim_2_text">"Me encanta que me traen mis paquetes hasta la puerta de mi casa en Granada. El servicio aéreo es muy rápido."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold">MG</div>
-                        <div>
-                            <p class="font-bold text-sm">Maria González</p>
-                            <p class="text-xs text-gray-500">Granada</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6 italic" data-translate="testim_3_text">"Primera vez que importo y me guiaron en todo el proceso. Muy amables y profesionales. Sin duda volveré a usar Mikompra."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-white font-bold">JL</div>
-                        <div>
-                            <p class="font-bold text-sm">Jorge López</p>
-                            <p class="text-xs text-gray-500">Estelí</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-brand-blue mb-12" data-translate="faq_title">Preguntas Frecuentes</h2>
-            <div class="space-y-4">
-                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
-                    <summary class="flex justify-between items-center font-bold text-gray-800">
-                        <span data-translate="faq_q1">¿Cuáles son los tiempos de entrega?</span>
-                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a1">
-                        <strong>Aéreo:</strong> 1 a 3 días hábiles una vez recibido en Miami.<br>
-                        <strong>Marítimo:</strong> 15 a 18 días hábiles una vez recibido en Miami.
-                    </p>
-                </details>
-                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
-                    <summary class="flex justify-between items-center font-bold text-gray-800">
-                        <span data-translate="faq_q2">¿Cobran impuestos de aduana?</span>
-                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a2">
-                        Nuestra tarifa por libra ya incluye la gestión aduanera para la mayoría de artículos personales. Sin embargo, artículos de alto valor o cantidades comerciales pueden requerir pagos adicionales.
-                    </p>
-                </details>
-                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
-                    <summary class="flex justify-between items-center font-bold text-gray-800">
-                        <span data-translate="faq_q3">¿Qué artículos NO puedo enviar? (Restringidos)</span>
-                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a3">
-                        No enviamos: Drones, vapes, cigarros, licor, armas de fuego, municiones, explosivos, ni armas cortopunzantes como cuchillos. Si tienes dudas sobre un producto, consúltanos antes de comprar.
-                    </p>
-                </details>
-                <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
-                    <summary class="flex justify-between items-center font-bold text-gray-800">
-                        <span data-translate="faq_q4">¿Cómo obtengo mi dirección en Miami?</span>
-                        <span class="text-brand-orange transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed text-sm" data-translate="faq_a4">
-                        Es muy fácil y gratis. Solo escríbenos a nuestro WhatsApp o presiona el botón "Contáctanos" y te daremos tu código de casillero único para que empieces a comprar hoy mismo.
-                    </p>
-                </details>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100"><div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-600 mb-6 italic" data-translate="testim_1_text">"Excelente servicio, traje todos los repuestos para mi taller desde Miami y el envío marítimo fue súper económico. Recomendados."</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center text-white font-bold">CR</div><div><p class="font-bold text-sm">Carlos Ruiz</p><p class="text-xs text-gray-500">Managua</p></div></div></div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100"><div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-600 mb-6 italic" data-translate="testim_2_text">"Me encanta que me traen mis paquetes hasta la puerta de mi casa en Granada. El servicio aéreo es muy rápido."</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold">MG</div><div><p class="font-bold text-sm">Maria González</p><p class="text-xs text-gray-500">Granada</p></div></div></div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100"><div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-600 mb-6 italic" data-translate="testim_3_text">"Primera vez que importo y me guiaron en todo el proceso. Muy amables y profesionales. Sin duda volveré a usar Mikompra."</p><div class="flex items-center gap-3"><div class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center text-white font-bold">JL</div><div><p class="font-bold text-sm">Jorge López</p><p class="text-xs text-gray-500">Estelí</p></div></div></div>
             </div>
         </div>
     </section>
 
     <section class="py-16 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-brand-blue mb-10" data-translate="map_title">Nuestra Ubicación</h2>
-            <div class="rounded-xl overflow-hidden shadow-2xl h-80">
-                <iframe 
-                    src="https://maps.google.com/maps?q=Granada,Nicaragua&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-brand-blue mb-10" data-translate="map_title">Nuestra Ubicación</h2>
+            <div class="rounded-xl overflow-hidden shadow-2xl h-80 mb-4">
+                <iframe src="https://maps.google.com/maps?q=Granada,Nicaragua&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <p class="text-center text-gray-600 mt-4" data-translate="map_address_detail">Búscanos en el mapa. Estamos cerca de la Gasolinera UNO Guapinol, Granada, Nicaragua.</p>
+            <p class="text-gray-600" data-translate="map_address_detail">Búscanos en el mapa. Estamos cerca de la Gasolinera UNO Guapinol, Granada, Nicaragua.</p>
         </div>
     </section>
 
@@ -422,460 +275,194 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center mb-6">
-                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xgAKLo6JEWkQ7kNvwE978Za&_nc_oc=AdmWmKsydii9CTe4OvhqcNy159Y5tilcnjFidK4CsUhtxxt5Yv-Kt3pbKDXs5CGxJC-xvNngA5vyXfQgrkGkbRDS&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=vgfgPNVj2iSSO_DdTcHE-w&oh=00_Afnn68pFnJxQUffC0gi5yy33yseNqhdVsfNZnpyfr8Oqrg&oe=69579781" alt="Importaciones Mikompra Logo" class="h-16 w-auto rounded-md" onerror="this.style.display='none'; document.getElementById('fallback-logo-footer').classList.remove('hidden');">
-                        
-                         <div id="fallback-logo-footer" class="hidden flex items-center gap-1 ml-2">
-                            <span class="text-2xl font-black text-white tracking-tighter">M</span>
-                            <span class="text-2xl font-black text-brand-orange tracking-tighter">K</span>
-                            <span class="font-bold text-lg text-white ml-2">Mikompra</span>
-                        </div>
+                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xgAKLo6JEWkQ7kNvwE978Za&_nc_oc=AdmWmKsydii9CTe4OvhqcNy159Y5tilcnjFidK4CsUhtxxt5Yv-Kt3pbKDXs5CGxJC-xvNngA5vyXfQgrkGkbRDS&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=vgfgPNVj2iSSO_DdTcHE-w&oh=00_Afnn68pFnJxQUffC0gi5yy33yseNqhdVsfNZnpyfr8Oqrg&oe=69579781" alt="Logo Mikompra" class="h-16 w-auto rounded-md">
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed" data-translate="footer_desc">
-                        Facilitamos tus compras en Estados Unidos. Somos tu puente logístico seguro y confiable hacia Nicaragua.
-                    </p>
+                    <p class="text-gray-400 text-sm" data-translate="footer_desc">Somos tu puente logístico seguro y confiable hacia Nicaragua.</p>
                 </div>
-                
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-brand-orange" data-translate="footer_contact_title">Contacto</h4>
                     <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1 text-brand-light"></i>
-                            <span data-translate="footer_address">Gasolinera UNO Guapinol 5 cuadras al norte, Granada, Nicaragua.</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-brands fa-whatsapp mt-1 text-green-500"></i>
-                            <a href="https://wa.me/50588826162" target="_blank" class="hover:text-green-400 transition font-medium">+505 8882-6162</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope mt-1 text-brand-light"></i>
-                            <span>importacionesmikompra@gmail.com</span>
-                        </li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot mt-1 text-brand-light"></i><span data-translate="footer_address">Gasolinera UNO Guapinol 5 cuadras al norte, Granada, Nicaragua.</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-brands fa-whatsapp text-green-500"></i><a href="https://wa.me/50588826162" target="_blank" class="hover:text-green-400">+505 8882-6162</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-brand-orange" data-translate="footer_schedule_title">Horario de Atención</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li class="flex justify-between"><span data-translate="footer_mon_fri">Lunes - Viernes:</span> <span>8:00 AM - 5:00 PM</span></li>
-                        <li class="flex justify-between"><span data-translate="footer_sat">Sábados:</span> <span>8:00 AM - 12:00 MD</span></li>
-                        <li class="flex justify-between"><span data-translate="footer_sun">Domingos:</span> <span class="text-red-400" data-translate="footer_closed">Cerrado</span></li>
+                    <h4 class="font-bold text-lg mb-6 text-brand-orange" data-translate="footer_schedule_title">Horario</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>Lunes - Viernes: 8:00 AM - 5:00 PM</li>
+                        <li>Sábados: 8:00 AM - 12:00 MD</li>
+                        <li class="text-red-400">Domingos: Cerrado</li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-brand-orange" data-translate="footer_follow">Síguenos</h4>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-center gap-3">
-                            <div class="bg-white w-8 h-8 rounded-full flex items-center justify-center text-[#1877F2]">
-                                <i class="fa-brands fa-facebook-f text-lg"></i>
-                            </div>
-                            <a href="https://facebook.com" target="_blank" class="hover:text-brand-light transition font-medium">Importaciones Mikompra</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="bg-white w-8 h-8 rounded-full flex items-center justify-center text-[#E1306C]">
-                                <i class="fa-brands fa-instagram text-lg"></i>
-                            </div>
-                            <a href="https://instagram.com" target="_blank" class="hover:text-brand-light transition font-medium">Importaciones Mikompra</a>
-                        </li>
-                    </ul>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-white w-10 h-10 rounded-full flex items-center justify-center text-[#1877F2] transition hover:scale-110"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="bg-white w-10 h-10 rounded-full flex items-center justify-center text-[#E1306C] transition hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                <p data-translate="footer_rights">© 2025 Importaciones Mikompra. Todos los derechos reservados.</p>
-            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">© 2025 Importaciones Mikompra. Todos los derechos reservados.</div>
         </div>
     </footer>
 
     <div class="fixed bottom-6 right-6 z-50">
-        <button id="chat-toggle" onclick="toggleChat()" class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow relative">
-            <i class="fa-brands fa-whatsapp text-4xl"></i>
-        </button>
+        <button onclick="toggleChat()" class="bg-green-500 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center animate-bounce-slow transition hover:scale-110"><i class="fa-brands fa-whatsapp text-4xl"></i></button>
     </div>
-    <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-white rounded-2xl shadow-2xl z-50 hidden border border-gray-200 overflow-hidden transform transition-all duration-300 origin-bottom-right scale-0 opacity-0">
-        <div class="bg-brand-blue p-4 flex items-center justify-between">
-            <h4 class="font-bold text-sm text-white">Soporte Mikompra</h4>
-            <button onclick="toggleChat()" class="text-white hover:text-gray-200"><i class="fa-solid fa-xmark text-xl"></i></button>
-        </div>
-        <div class="p-4 bg-gray-100 h-64 overflow-y-auto space-y-4">
-            <div class="flex justify-start">
-                <div class="bg-white p-3 rounded-lg text-sm text-gray-700">
-                    <span data-translate="chat_welcome">Hola 👋 <br>¿En qué podemos ayudarte hoy?</span>
-                </div>
-            </div>
-        </div>
+    <div id="chat-window" class="fixed bottom-24 right-6 w-80 bg-white rounded-2xl shadow-2xl z-50 hidden overflow-hidden transform transition-all duration-300 origin-bottom-right scale-0 opacity-0 border border-gray-200">
+        <div class="bg-brand-blue p-4 flex justify-between items-center text-white"><h4 class="font-bold text-sm">Soporte Mikompra</h4><button onclick="toggleChat()"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="p-4 bg-gray-100 h-64 overflow-y-auto text-sm">Hola 👋 ¿En qué podemos ayudarte hoy?</div>
         <div class="p-3 bg-white border-t border-gray-100">
             <form onsubmit="sendToWhatsapp(event)" class="flex gap-2">
                 <input type="text" id="chat-input" placeholder="Escribe..." class="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm focus:outline-none" required>
-                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white w-9 h-9 rounded-full flex items-center justify-center"><i class="fa-solid fa-paper-plane text-sm"></i></button>
+                <button type="submit" class="bg-green-500 text-white w-9 h-9 rounded-full flex items-center justify-center"><i class="fa-solid fa-paper-plane text-sm"></i></button>
             </form>
         </div>
     </div>
 
     <div id="toast-notification" class="fixed bottom-24 left-1/2 -translate-x-1/2 p-4 bg-green-600 text-white rounded-lg shadow-xl z-50 transition-all duration-300 transform translate-y-full opacity-0">
-        <div class="flex items-center gap-3">
-            <span id="toast-message" class="font-medium text-sm">Acción realizada.</span>
-        </div>
+        <div class="flex items-center gap-3"><span id="toast-message" class="font-medium text-sm">Acción realizada.</span></div>
     </div>
 
     <script>
-        const DEFAULT_AIR_RATE = 7.00;
-        const DEFAULT_SEA_RATE = 2.50;
-        const PROMO_AIR_RATE = 6.50;
-        const PROMO_SEA_RATE = 2.20; 
-
-        const PROMO_START_DATE = new Date('2025-12-03T00:00:00');
-        const PROMO_END_DATE = new Date('2026-01-05T23:59:59');
-        const CURRENT_DATE = new Date();
-
-        const IS_PROMO_ACTIVE = CURRENT_DATE >= PROMO_START_DATE && CURRENT_DATE <= PROMO_END_DATE;
-        
-        let currentAirRate = IS_PROMO_ACTIVE ? PROMO_AIR_RATE : DEFAULT_AIR_RATE;
-        let currentSeaRate = IS_PROMO_ACTIVE ? PROMO_SEA_RATE : DEFAULT_SEA_RATE;
-        let currentLang = 'es';
-        
-        let selectedItems = [];
+        const DEFAULT_AIR = 7.00, DEFAULT_SEA = 2.50, PROMO_AIR = 6.50, PROMO_SEA = 2.20;
+        const PROMO_START = new Date('2025-12-03'), PROMO_END = new Date('2026-01-05');
+        const IS_PROMO = new Date() >= PROMO_START && new Date() <= PROMO_END;
+        let currentAir = IS_PROMO ? PROMO_AIR : DEFAULT_AIR, currentSea = IS_PROMO ? PROMO_SEA : DEFAULT_SEA;
+        let currentLang = 'es', selectedItems = [];
 
         const translations = {
             es: {
-                calc_helper_label: "Arma tu paquete (Selecciona producto y cantidad):",
                 banner_title: "¡Felices Fiestas!",
-                banner_message: "Solo por este Mes, aprovecha nuestros precios especiales:",
-                services_promo_alert: "¡APROVECHA NUESTROS PRECIOS DE NAVIDAD!",
-                calc_promo_note: "¡Tarifas actualizadas por oferta navideña!",
-                calc_opt_air: `Aéreo ($${currentAirRate.toFixed(2)}/lb${IS_PROMO_ACTIVE ? ' - Oferta' : ''})`, 
-                calc_opt_sea: `Marítimo ($${currentSeaRate.toFixed(2)}/lb${IS_PROMO_ACTIVE ? ' - Oferta' : ''})`,
-                calc_title: "Calcula tu Envío Estimado",
-                calc_desc: "Obtén un estimado rápido de cuánto costará traer tu paquete a Nicaragua.",
-                calc_label_weight: "Peso Total (lb)",
-                calc_label_method: "Método de Envío",
-                calc_result_label: "Costo Estimado:",
-                calc_disclaimer: "*Tarifas sujetas a cambios y dimensiones del paquete.",
+                hero_subtitle: "Rápido y seguro",
+                calc_opt_air: `Aéreo ($${currentAir.toFixed(2)}/lb${IS_PROMO ? ' - Oferta' : ''})`, 
+                calc_opt_sea: `Marítimo ($${currentSea.toFixed(2)}/lb${IS_PROMO ? ' - Oferta' : ''})`,
+                stat_2_desc: "Años de Experiencia", stat_3_desc: "Departamentos de Nicaragua",
                 nav_home: "Inicio", nav_services: "Servicios", nav_calc: "Calculadora", nav_faq: "Preguntas", nav_contact: "Contáctanos",
-                hero_title: "Traemos tus compras de USA <br> directo a Nicaragua",
-                hero_subtitle: "Rápido y seguro. Aéreo y Marítimo.",
-                hero_btn_quote: "Cotizar Envío", hero_btn_how: "Cómo Funciona",
-                services_title: "Nuestros Servicios", services_subtitle: "Adaptamos nuestros envíos a tus necesidades. Ya sea que necesites rapidez o enviar grandes volúmenes.",
-                air_badge: "Más Rápido", air_title: "Envío Aéreo", air_desc: "Recibe tus paquetes en tiempo récord.", price_label: "Precio por libra desde:",
-                sea_badge: "Mejor Precio", sea_title: "Envío Marítimo", sea_desc: "Economía garantizada para cajas grandes.",
-                testim_title: "Lo que dicen nuestros clientes", faq_title: "Preguntas Frecuentes", map_title: "Nuestra Ubicación",
-                map_address_detail: "Búscanos en el mapa. Estamos cerca de la Gasolinera UNO Guapinol, Granada, Nicaragua.",
-                chat_welcome: "Hola 👋 <br>¿En qué podemos ayudarte hoy?", chat_placeholder: "Escribe tu consulta...",
-                footer_desc: "Facilitamos tus compras en Estados Unidos. Somos tu puente logístico seguro y confiable hacia Nicaragua.",
-                footer_contact_title: "Contacto",
-                footer_address: "Gasolinera UNO Guapinol 5 cuadras al norte, Granada, Nicaragua.",
-                footer_schedule_title: "Horario de Atención",
-                footer_mon_fri: "Lunes - Viernes:",
-                footer_sat: "Sábados:",
-                footer_sun: "Domingos:",
-                footer_closed: "Cerrado",
-                footer_follow: "Síguenos",
-                footer_rights: "© 2025 Importaciones Mikompra. Todos los derechos reservados.",
-                stat_1_desc: "Paquetes Entregados",
-                stat_2_desc: "Años de Experiencia",
-                stat_3_desc: "Departamentos de Nicaragua",
-                stat_4_desc: "En Compras Asistidas"
+                calc_helper_label: "Arma tu paquete (Selecciona producto y cantidad):",
+                calc_label_weight: "Peso Total (lb)", calc_label_method: "Método de Envío"
             },
             en: {
-                calc_helper_label: "Build your package (Select product and quantity):",
                 banner_title: "Happy Holidays!",
-                banner_message: "For this month only, take advantage of our special prices:",
-                services_promo_alert: "TAKE ADVANTAGE OF OUR CHRISTMAS PRICES!",
-                calc_promo_note: "Rates updated for the holiday offer!",
-                calc_opt_air: `Air ($${currentAirRate.toFixed(2)}/lb${IS_PROMO_ACTIVE ? ' - Offer' : ''})`, 
-                calc_opt_sea: `Sea ($${currentSeaRate.toFixed(2)}/lb${IS_PROMO_ACTIVE ? ' - Offer' : ''})`,
-                calc_title: "Calculate Your Estimated Shipping",
-                calc_desc: "Get a quick estimate of how much it will cost to bring your package to Nicaragua.",
-                calc_label_weight: "Total Weight (lb)",
-                calc_label_method: "Shipping Method",
-                calc_result_label: "Estimated Cost:",
-                calc_disclaimer: "*Rates subject to change and package dimensions.",
+                hero_subtitle: "Fast and safe",
+                calc_opt_air: `Air ($${currentAir.toFixed(2)}/lb${IS_PROMO ? ' - Offer' : ''})`, 
+                calc_opt_sea: `Sea ($${currentSea.toFixed(2)}/lb${IS_PROMO ? ' - Offer' : ''})`,
+                stat_2_desc: "Years of Experience", stat_3_desc: "Departments in Nicaragua",
                 nav_home: "Home", nav_services: "Services", nav_calc: "Calculator", nav_faq: "FAQ", nav_contact: "Contact Us",
-                hero_title: "We bring your USA purchases <br> straight to Nicaragua",
-                hero_subtitle: "Fast and secure. Air and Sea.",
-                hero_btn_quote: "Get a Quote", hero_btn_how: "How it Works",
-                services_title: "Our Services", services_subtitle: "We adapt our shipments to your needs. Whether you need speed or sending large volumes.",
-                air_badge: "Fastest", air_title: "Air Shipping", air_desc: "Receive your packages in record time.", price_label: "Price per pound starting at:",
-                sea_badge: "Best Price", sea_title: "Sea Shipping", sea_desc: "Guaranteed economy for large boxes.",
-                testim_title: "What Our Customers Say", faq_title: "Frequently Asked Questions", map_title: "Our Location",
-                map_address_detail: "Find us on the map. We are near UNO Guapinol Gas Station, Granada, Nicaragua.",
-                chat_welcome: "Hello 👋 <br>How can we help you today?", chat_placeholder: "Type your message...",
-                footer_desc: "We facilitate your purchases in the United States. We are your safe and reliable logistics bridge to Nicaragua.",
-                footer_contact_title: "Contact",
-                footer_address: "UNO Guapinol Gas Station, 5 blocks north, Granada, Nicaragua.",
-                footer_schedule_title: "Business Hours",
-                footer_mon_fri: "Monday - Friday:",
-                footer_sat: "Saturdays:",
-                footer_sun: "Sundays:",
-                footer_closed: "Closed",
-                footer_follow: "Follow Us",
-                footer_rights: "© 2025 Importaciones Mikompra. All rights reserved.",
-                stat_1_desc: "Packages Delivered",
-                stat_2_desc: "Years of Experience",
-                stat_3_desc: "Departments in Nicaragua",
-                stat_4_desc: "In Assisted Purchases"
+                calc_helper_label: "Build your package (Select product and quantity):",
+                calc_label_weight: "Total Weight (lb)", calc_label_method: "Shipping Method"
             }
         };
 
-        document.addEventListener('DOMContentLoaded', () => {
-            applyPromoLogic();
-            if (document.getElementById('stats-container')) {
-                counterObserver.observe(document.getElementById('stats-container'));
+        function applyPromoLogic() {
+            if (IS_PROMO) {
+                document.getElementById('christmas-banner').classList.remove('hidden');
+                document.getElementById('services-promo-alert').classList.remove('hidden');
+                document.getElementById('calc-promo-note').classList.remove('hidden');
+                document.getElementById('main-nav').style.top = '48px';
+                document.getElementById('inicio').style.paddingTop = '128px';
             }
-        });
+            document.getElementById('method').querySelector('option[value="air"]').textContent = translations[currentLang].calc_opt_air;
+            document.getElementById('method').querySelector('option[value="sea"]').textContent = translations[currentLang].calc_opt_sea;
+        }
 
         function addItemToList() {
-            const selector = document.getElementById('item-estimator');
-            const qtyInput = document.getElementById('item-quantity');
-            const selectedOption = selector.options[selector.selectedIndex];
-            
-            if (!selector.value) {
-                showToast(currentLang === 'es' ? '⚠️ Selecciona un artículo primero.' : '⚠️ Select an item first.', 'bg-yellow-500');
-                return;
-            }
-
-            const unitWeight = parseFloat(selector.value);
-            const name = selectedOption.getAttribute('data-name');
-            let qty = parseInt(qtyInput.value);
-
-            if (isNaN(qty) || qty < 1) { qty = 1; }
-
-            const totalItemWeight = unitWeight * qty;
-
-            selectedItems.push({ name, unitWeight, qty, totalWeight: totalItemWeight });
-
-            renderItemsList();
-            updateTotalWeight();
-            
-            selector.value = "";
-            qtyInput.value = "1";
-            
-            showToast(currentLang === 'es' ? 'Producto agregado.' : 'Product added.', 'bg-green-600');
-        }
-
-        function removeItem(index) {
-            selectedItems.splice(index, 1);
-            renderItemsList();
-            updateTotalWeight();
-        }
-
-        function clearItemsList() {
-            selectedItems = [];
-            renderItemsList();
-            updateTotalWeight();
-        }
-
-        function renderItemsList() {
-            const listContainer = document.getElementById('items-list-container');
-            const listUl = document.getElementById('items-list');
-            
-            listUl.innerHTML = "";
-
-            if (selectedItems.length === 0) {
-                listContainer.classList.add('hidden');
-                return;
-            }
-
-            listContainer.classList.remove('hidden');
-
-            selectedItems.forEach((item, index) => {
-                const li = document.createElement('li');
-                li.className = "flex justify-between items-center bg-blue-50 px-3 py-2 rounded text-sm border border-blue-100 item-added";
-                li.innerHTML = `
-                    <span>
-                        <span class="font-bold text-brand-blue">${item.qty} x</span> ${item.name} 
-                        <span class="text-gray-500 text-xs ml-1">(${item.totalWeight.toFixed(1)} lb)</span>
-                    </span>
-                    <button onclick="removeItem(${index})" class="text-red-400 hover:text-red-600 ml-2 transition">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                `;
-                listUl.appendChild(li);
+            const selector = document.getElementById('item-estimator'), qty = parseInt(document.getElementById('item-quantity').value);
+            if (!selector.value) return;
+            selectedItems.push({ 
+                name: selector.options[selector.selectedIndex].getAttribute('data-name'), 
+                weight: parseFloat(selector.value) * qty, 
+                qty 
             });
+            renderItems();
         }
 
-        function updateTotalWeight() {
-            const weightInput = document.getElementById('weight');
-            const total = selectedItems.reduce((sum, item) => sum + item.totalWeight, 0);
-            const roundedTotal = Math.round(total * 10) / 10; 
-
-            weightInput.value = roundedTotal > 0 ? roundedTotal : "";
-
-            if (selectedItems.length > 0) {
-                weightInput.setAttribute('readonly', true);
-                weightInput.classList.add('bg-gray-100', 'cursor-not-allowed');
-                weightInput.classList.remove('bg-white');
-            } else {
-                weightInput.removeAttribute('readonly');
-                weightInput.classList.remove('bg-gray-100', 'cursor-not-allowed');
-                weightInput.classList.add('bg-white');
-            }
-
+        function renderItems() {
+            const list = document.getElementById('items-list'), container = document.getElementById('items-list-container');
+            list.innerHTML = "";
+            let total = 0;
+            selectedItems.forEach((item, i) => {
+                total += item.weight;
+                const li = document.createElement('li');
+                li.className = "flex justify-between items-center bg-blue-50 px-2 py-1 rounded border border-blue-100 item-added";
+                li.innerHTML = `<span><b>${item.qty}x</b> ${item.name} (${item.weight.toFixed(1)} lb)</span><button onclick="removeItem(${i})" class="text-red-400"><i class="fa-solid fa-trash-can"></i></button>`;
+                list.appendChild(li);
+            });
+            container.classList.toggle('hidden', selectedItems.length === 0);
+            const roundedTotal = Math.round(total * 10) / 10;
+            document.getElementById('total-weight-display').textContent = roundedTotal.toFixed(1);
+            document.getElementById('weight').value = total > 0 ? roundedTotal.toFixed(1) : "";
+            document.getElementById('weight').readOnly = selectedItems.length > 0;
             calculateShipping();
         }
 
-        function applyPromoLogic() {
-            const nav = document.getElementById('main-nav');
-            const hero = document.getElementById('inicio');
-            const banner = document.getElementById('christmas-banner');
-            const servicesPromoAlert = document.getElementById('services-promo-alert');
-            const calcPromoNote = document.getElementById('calc-promo-note');
-            const airPriceDisplay = document.getElementById('air-price-display');
-            const seaPriceDisplay = document.getElementById('sea-price-display');
-            const methodSelect = document.getElementById('method');
+        function removeItem(i) { selectedItems.splice(i, 1); renderItems(); }
+        function clearItemsList() { selectedItems = []; renderItems(); }
 
-            if (IS_PROMO_ACTIVE) {
-                const bannerHeight = 48; 
-                banner.classList.remove('hidden');
-                servicesPromoAlert.classList.remove('hidden');
-                calcPromoNote.classList.remove('hidden');
-                
-                nav.style.top = `${bannerHeight}px`;
-                hero.style.paddingTop = `${bannerHeight + 80}px`;
-
-                airPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-red-600 line-through mr-2 inline-block">$${DEFAULT_AIR_RATE.toFixed(2)}</p><p class="text-4xl font-bold text-brand-blue inline-block">$${PROMO_AIR_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
-                seaPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-red-600 line-through mr-2 inline-block">$${DEFAULT_SEA_RATE.toFixed(2)}</p><p class="text-4xl font-bold text-brand-blue inline-block">$${PROMO_SEA_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
-            } else {
-                banner.classList.add('hidden');
-                servicesPromoAlert.classList.add('hidden');
-                calcPromoNote.classList.add('hidden');
-                nav.style.top = `0px`;
-                hero.style.paddingTop = `80px`;
-
-                airPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-brand-blue inline-block">$${DEFAULT_AIR_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
-                seaPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-brand-blue inline-block">$${DEFAULT_SEA_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
-            }
-
-            if (methodSelect) {
-                methodSelect.querySelector('option[value="air"]').textContent = translations[currentLang].calc_opt_air;
-                methodSelect.querySelector('option[value="sea"]').textContent = translations[currentLang].calc_opt_sea;
-            }
+        function calculateShipping() {
+            const weight = parseFloat(document.getElementById('weight').value), method = document.getElementById('method').value;
+            const res = document.getElementById('result'), display = document.getElementById('cost-display');
+            if (!weight || weight <= 0) { res.classList.add('hidden'); return; }
+            display.textContent = '$' + (weight * (method === 'air' ? currentAir : currentSea)).toFixed(2);
+            res.classList.remove('hidden');
         }
 
         function toggleLanguage() {
             currentLang = currentLang === 'es' ? 'en' : 'es';
-            const icon = currentLang === 'es' ? '🇺🇸' : '🇳🇮';
-            const text = currentLang === 'es' ? 'EN' : 'ES';
-            
-            document.getElementById('lang-icon').textContent = icon;
-            document.getElementById('lang-text').textContent = text;
-            document.getElementById('lang-icon-mobile').textContent = icon;
-            document.getElementById('lang-text-mobile').textContent = text;
-
+            document.getElementById('lang-icon').textContent = currentLang === 'es' ? '🇺🇸' : '🇳🇮';
+            document.getElementById('lang-text').textContent = currentLang === 'es' ? 'EN' : 'ES';
             document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
-                if (translations[currentLang][key]) {
-                    if (el.tagName === 'INPUT') el.placeholder = translations[currentLang][key];
-                    else el.innerHTML = translations[currentLang][key];
-                }
+                const key = el.dataset.translate;
+                if (translations[currentLang][key]) el.innerHTML = translations[currentLang][key];
             });
-            document.getElementById('chat-input').placeholder = translations[currentLang]['chat_placeholder'];
             applyPromoLogic();
         }
 
-        const btn = document.getElementById('mobile-menu-button');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
-
-        function calculateShipping() {
-            const weightInput = document.getElementById('weight');
-            const weight = parseFloat(weightInput.value);
-            const method = document.getElementById('method').value;
-            const resultDiv = document.getElementById('result');
-            const costDisplay = document.getElementById('cost-display');
-
-            if (isNaN(weight) || weight <= 0) {
-                costDisplay.textContent = '$0.00';
-                return;
-            }
-
-            let rate = (method === 'air') ? currentAirRate : currentSeaRate;
-            const total = weight * rate;
-
-            costDisplay.textContent = '$' + total.toFixed(2);
-            resultDiv.classList.remove('hidden');
-            resultDiv.classList.add('animate-pulse');
-            setTimeout(() => resultDiv.classList.remove('animate-pulse'), 500);
-        }
-
-        function showToast(message, colorClass = 'bg-green-600') {
-            const toast = document.getElementById('toast-notification');
-            const toastMessage = document.getElementById('toast-message');
-            
-            toast.className = 'fixed bottom-24 left-1/2 -translate-x-1/2 p-4 text-white rounded-lg shadow-xl z-50 transition-all duration-300 transform opacity-0';
-            toast.classList.add(colorClass);
-
-            const icon = message.includes('⚠️') ? 'fa-triangle-exclamation' : (message.includes('❌') ? 'fa-circle-xmark' : 'fa-check-circle');
-            toastMessage.innerHTML = `<i class="fa-solid ${icon} text-2xl mr-3"></i><span class="font-medium text-sm">${message.replace(/❌|✅|⚠️/g, '').trim()}</span>`;
-
-            toast.classList.remove('translate-y-full', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-full', 'opacity-0');
-            }, 3000);
-        }
-
         function toggleChat() {
-            const chatWindow = document.getElementById('chat-window');
-            if (chatWindow.classList.contains('hidden')) {
-                chatWindow.classList.remove('hidden');
-                setTimeout(() => {
-                    chatWindow.classList.remove('scale-0', 'opacity-0');
-                    chatWindow.classList.add('scale-100', 'opacity-100');
-                    document.getElementById('chat-input').focus();
-                }, 10);
-            } else {
-                chatWindow.classList.remove('scale-100', 'opacity-100');
-                chatWindow.classList.add('scale-0', 'opacity-0');
-                setTimeout(() => {
-                    chatWindow.classList.add('hidden');
-                }, 300);
-            }
+            const win = document.getElementById('chat-window');
+            const isOpen = !win.classList.contains('hidden');
+            if (!isOpen) win.classList.remove('hidden');
+            setTimeout(() => {
+                win.classList.toggle('scale-100', !isOpen); win.classList.toggle('opacity-100', !isOpen);
+                win.classList.toggle('scale-0', isOpen); win.classList.toggle('opacity-0', isOpen);
+                if (isOpen) setTimeout(() => win.classList.add('hidden'), 300);
+            }, 10);
         }
 
         function sendToWhatsapp(e) {
             e.preventDefault();
-            const input = document.getElementById('chat-input');
-            const message = input.value;
-            if (message.trim() === "") return;
-            const phoneNumber = "50588826162";
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            input.value = "";
-            toggleChat();
+            const msg = document.getElementById('chat-input').value;
+            window.open(`https://wa.me/50588826162?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
         function startCounter(el, target) {
-            const duration = 2000;
-            const step = Math.ceil(target / (duration / 16)); 
-            let current = 0;
+            let curr = 0;
+            const duration = 2000, stepTime = 30;
+            const steps = duration / stepTime;
+            const increment = target / steps;
             const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                el.textContent = current.toLocaleString('en-US');
-            }, 16);
+                curr += increment;
+                if (curr >= target) { el.textContent = target; clearInterval(timer); }
+                else { el.textContent = Math.floor(curr); }
+            }, stepTime);
         }
 
-        const counterObserver = new IntersectionObserver((entries, observer) => {
+        const counterObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.counter');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-target'));
-                        startCounter(counter, target);
+                    entry.target.querySelectorAll('.counter').forEach(c => {
+                        startCounter(c, parseInt(c.dataset.target));
                     });
-                    observer.unobserve(entry.target);
+                    counterObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
-        
+        }, { threshold: 0.2 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyPromoLogic();
+            const stats = document.getElementById('stats-section');
+            if (stats) counterObserver.observe(stats);
+        });
     </script>
 </body>
 </html>
-
