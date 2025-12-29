@@ -38,7 +38,7 @@
             background-color: #A32A29; /* Rojo oscuro navideño */
             color: white;
             padding: 1rem 0;
-            z-index: 55;
+            z-index: 55; /* Más alto que la navegación para que se vea bien */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .christmas-tree {
@@ -91,7 +91,7 @@
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=T9evMkn5xqQQ7kNvwHvTebu&_nc_oc=AdnmDpu6Dt0x2UkGtp1BXAm938m4gsRrFCbh3jrX6CYn5pMirtUMzCPgepcW2eHkjRVw5eL_C9GsWP5d0Q6QNwkA&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=w-E9eP_cBtsYBrXIP4Y_5Q&oh=00_Afg40pVcgYSIfFqnLE3fNYViYKVXYK-W-H7-LJJGjl4fgg&oe=69319441" alt="Importaciones Mikompra Logo" class="h-16 w-auto object-contain">
+                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xgAKLo6JEWkQ7kNvwE978Za&_nc_oc=AdmWmKsydii9CTe4OvhqcNy159Y5tilcnjFidK4CsUhtxxt5Yv-Kt3pbKDXs5CGxJC-xvNngA5vyXfQgrkGkbRDS&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=vgfgPNVj2iSSO_DdTcHE-w&oh=00_Afnn68pFnJxQUffC0gi5yy33yseNqhdVsfNZnpyfr8Oqrg&oe=69579781" alt="Importaciones Mikompra Logo" class="h-16 w-auto object-contain">
                         <div class="ml-3 flex flex-col justify-center">
                             <span class="text-xs md:text-sm font-bold text-brand-blue tracking-widest uppercase leading-tight">Importaciones</span>
                             <span class="text-xl md:text-2xl font-black text-brand-blue tracking-tighter leading-none">Mikompra</span>
@@ -357,7 +357,6 @@
     <section id="faq" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-brand-blue mb-12" data-translate="faq_title">Preguntas Frecuentes</h2>
-            
             <div class="space-y-4">
                 <details class="group bg-gray-50 rounded-lg p-6 cursor-pointer border border-gray-200">
                     <summary class="flex justify-between items-center font-bold text-gray-800">
@@ -400,36 +399,7 @@
         </div>
     </section>
 
-    <section id="como-funciona" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-brand-blue mb-16" data-translate="steps_title">¿Cómo importar con nosotros?</h2>
-            
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div class="relative">
-                    <div class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-brand-orange text-3xl font-bold border-2 border-brand-orange">1</div>
-                    <h3 class="font-bold text-xl mb-2" data-translate="step1_title">Regístrate</h3>
-                    <p class="text-gray-600 text-sm" data-translate="step1_desc">Contáctanos para obtener tu dirección de casillero gratis en USA.</p>
-                </div>
-                <div class="relative">
-                    <div class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-brand-orange text-3xl font-bold border-2 border-brand-orange">2</div>
-                    <h3 class="font-bold text-xl mb-2" data-translate="step2_title">Compra</h3>
-                    <p class="text-gray-600 text-sm" data-translate="step2_desc">Haz tus compras en Amazon, eBay o tu tienda favorita y envíalas a tu casillero.</p>
-                </div>
-                <div class="relative">
-                    <div class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-brand-orange text-3xl font-bold border-2 border-brand-orange">3</div>
-                    <h3 class="font-bold text-xl mb-2" data-translate="step3_title">Notifica</h3>
-                    <p class="text-gray-600 text-sm" data-translate="step3_desc">Envíanos tu factura y número de rastreo para procesar tu paquete.</p>
-                </div>
-                <div class="relative">
-                    <div class="w-20 h-20 bg-white shadow-lg rounded-full flex items-center justify-center mx-auto mb-6 text-brand-orange text-3xl font-bold border-2 border-brand-orange">4</div>
-                    <h3 class="font-bold text-xl mb-2" data-translate="step4_title">Recibe</h3>
-                    <p class="text-gray-600 text-sm" data-translate="step4_desc">Recibe tus productos en nuestras oficinas en Nicaragua o a domicilio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-brand-blue mb-10" data-translate="map_title">Nuestra Ubicación</h2>
             <div class="rounded-xl overflow-hidden shadow-2xl h-80">
@@ -452,7 +422,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
                     <div class="flex items-center mb-6">
-                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=T9evMkn5xqQQ7kNvwHvTebu&_nc_oc=AdnmDpu6Dt0x2UkGtp1BXAm938m4gsRrFCbh3jrX6CYn5pMirtUMzCPgepcW2eHkjRVw5eL_C9GsWP5d0Q6QNwkA&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=w-E9eP_cBtsYBrXIP4Y_5Q&oh=00_Afg40pVcgYSIfFqnLE3fNYViYKVXYK-W-H7-LJJGjl4fgg&oe=69319441" alt="Importaciones Mikompra Logo" class="h-16 w-auto rounded-md" onerror="this.style.display='none'; document.getElementById('fallback-logo-footer').classList.remove('hidden');">
+                        <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xgAKLo6JEWkQ7kNvwE978Za&_nc_oc=AdmWmKsydii9CTe4OvhqcNy159Y5tilcnjFidK4CsUhtxxt5Yv-Kt3pbKDXs5CGxJC-xvNngA5vyXfQgrkGkbRDS&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=vgfgPNVj2iSSO_DdTcHE-w&oh=00_Afnn68pFnJxQUffC0gi5yy33yseNqhdVsfNZnpyfr8Oqrg&oe=69579781" alt="Importaciones Mikompra Logo" class="h-16 w-auto rounded-md" onerror="this.style.display='none'; document.getElementById('fallback-logo-footer').classList.remove('hidden');">
                         
                          <div id="fallback-logo-footer" class="hidden flex items-center gap-1 ml-2">
                             <span class="text-2xl font-black text-white tracking-tighter">M</span>
@@ -512,7 +482,7 @@
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                <p data-translate="footer_rights">&copy; 2025 Importaciones Mikompra. Todos los derechos reservados.</p>
+                <p data-translate="footer_rights">© 2025 Importaciones Mikompra. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -520,29 +490,16 @@
     <div class="fixed bottom-6 right-6 z-50">
         <button id="chat-toggle" onclick="toggleChat()" class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition transform hover:scale-110 animate-bounce-slow relative">
             <i class="fa-brands fa-whatsapp text-4xl"></i>
-            <span class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white">1</span>
         </button>
     </div>
-
     <div id="chat-window" class="fixed bottom-24 right-6 w-80 md:w-96 bg-white rounded-2xl shadow-2xl z-50 hidden border border-gray-200 overflow-hidden transform transition-all duration-300 origin-bottom-right scale-0 opacity-0">
         <div class="bg-brand-blue p-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="relative">
-                    <img src="https://scontent.fmga11-2.fna.fbcdn.net/v/t39.30808-6/338856886_133246173044899_5828221834102429652_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=T9evMkn5xqQQ7kNvwHvTebu&_nc_oc=AdnmDpu6Dt0x2UkGtp1BXAm938m4gsRrFCbh3jrX6CYn5pMirtUMzCPgepcW2eHkjRVw5eL_C9GsWP5d0Q6QNwkA&_nc_zt=23&_nc_ht=scontent.fmga11-2.fna&_nc_gid=w-E9eP_cBtsYBrXIP4Y_5Q&oh=00_Afg40pVcgYSIfFqnLE3fNYViYKVXYK-W-H7-LJJGjl4fgg&oe=69319441" class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                    <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-brand-blue"></div>
-                </div>
-                <div class="text-white">
-                    <h4 class="font-bold text-sm">Soporte Mikompra</h4>
-                    <p class="text-xs text-blue-200">En línea ahora</p>
-                </div>
-            </div>
-            <button onclick="toggleChat()" class="text-white hover:text-gray-200">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
+            <h4 class="font-bold text-sm text-white">Soporte Mikompra</h4>
+            <button onclick="toggleChat()" class="text-white hover:text-gray-200"><i class="fa-solid fa-xmark text-xl"></i></button>
         </div>
         <div class="p-4 bg-gray-100 h-64 overflow-y-auto space-y-4">
             <div class="flex justify-start">
-                <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-[85%] text-sm text-gray-700">
+                <div class="bg-white p-3 rounded-lg text-sm text-gray-700">
                     <span data-translate="chat_welcome">Hola 👋 <br>¿En qué podemos ayudarte hoy?</span>
                 </div>
             </div>
@@ -550,9 +507,7 @@
         <div class="p-3 bg-white border-t border-gray-100">
             <form onsubmit="sendToWhatsapp(event)" class="flex gap-2">
                 <input type="text" id="chat-input" placeholder="Escribe..." class="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm focus:outline-none" required>
-                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white w-9 h-9 rounded-full flex items-center justify-center">
-                    <i class="fa-solid fa-paper-plane text-sm"></i>
-                </button>
+                <button type="submit" class="bg-green-500 hover:bg-green-600 text-white w-9 h-9 rounded-full flex items-center justify-center"><i class="fa-solid fa-paper-plane text-sm"></i></button>
             </form>
         </div>
     </div>
@@ -564,28 +519,23 @@
     </div>
 
     <script>
-        // --- 1. CONFIGURACIÓN DE TARIFAS Y FECHAS PROMOCIONALES ---
         const DEFAULT_AIR_RATE = 7.00;
         const DEFAULT_SEA_RATE = 2.50;
         const PROMO_AIR_RATE = 6.50;
         const PROMO_SEA_RATE = 2.20; 
 
-        // Rango de fechas: 3 de Diciembre 2025 al 5 de Enero 2026
         const PROMO_START_DATE = new Date('2025-12-03T00:00:00');
         const PROMO_END_DATE = new Date('2026-01-05T23:59:59');
         const CURRENT_DATE = new Date();
 
-        // Verificar si la fecha actual está dentro del rango
         const IS_PROMO_ACTIVE = CURRENT_DATE >= PROMO_START_DATE && CURRENT_DATE <= PROMO_END_DATE;
         
         let currentAirRate = IS_PROMO_ACTIVE ? PROMO_AIR_RATE : DEFAULT_AIR_RATE;
         let currentSeaRate = IS_PROMO_ACTIVE ? PROMO_SEA_RATE : DEFAULT_SEA_RATE;
         let currentLang = 'es';
         
-        // --- 2. LISTA DE ITEMS SELECCIONADOS ---
         let selectedItems = [];
 
-        // --- 3. TRADUCCIONES ---
         const translations = {
             es: {
                 calc_helper_label: "Arma tu paquete (Selecciona producto y cantidad):",
@@ -606,8 +556,8 @@
                 hero_subtitle: "Rápido, seguro y con las mejores tarifas del mercado. Aéreo y Marítimo.",
                 hero_btn_quote: "Cotizar Envío", hero_btn_how: "Cómo Funciona",
                 services_title: "Nuestros Servicios", services_subtitle: "Adaptamos nuestros envíos a tus necesidades. Ya sea que necesites rapidez o enviar grandes volúmenes.",
-                air_badge: "Más Rápido", air_title: "Envío Aéreo", air_desc: "Ideal para compras en línea, ropa, electrónicos pequeños y documentos. Recibe tus paquetes en tiempo récord.", price_label: "Precio por libra desde:",
-                sea_badge: "Mejor Precio", sea_title: "Envío Marítimo", sea_desc: "La mejor opción para cajas grandes, mudanzas, repuestos pesados o electrodomésticos. Economía garantizada.",
+                air_badge: "Más Rápido", air_title: "Envío Aéreo", air_desc: "Recibe tus paquetes en tiempo récord.", price_label: "Precio por libra desde:",
+                sea_badge: "Mejor Precio", sea_title: "Envío Marítimo", sea_desc: "Economía garantizada para cajas grandes.",
                 testim_title: "Lo que dicen nuestros clientes", faq_title: "Preguntas Frecuentes", map_title: "Nuestra Ubicación",
                 map_address_detail: "Búscanos en el mapa. Estamos cerca de la Gasolinera UNO Guapinol, Granada, Nicaragua.",
                 chat_welcome: "Hola 👋 <br>¿En qué podemos ayudarte hoy?", chat_placeholder: "Escribe tu consulta...",
@@ -620,7 +570,7 @@
                 footer_sun: "Domingos:",
                 footer_closed: "Cerrado",
                 footer_follow: "Síguenos",
-                footer_rights: "&copy; 2025 Importaciones Mikompra. Todos los derechos reservados.",
+                footer_rights: "© 2025 Importaciones Mikompra. Todos los derechos reservados.",
                 stat_1_desc: "Paquetes Entregados",
                 stat_2_desc: "Años de Experiencia",
                 stat_3_desc: "Departamentos de Nicaragua",
@@ -645,8 +595,8 @@
                 hero_subtitle: "Fast, secure, and with the best rates in the market. Air and Sea.",
                 hero_btn_quote: "Get a Quote", hero_btn_how: "How it Works",
                 services_title: "Our Services", services_subtitle: "We adapt our shipments to your needs. Whether you need speed or sending large volumes.",
-                air_badge: "Fastest", air_title: "Air Shipping", air_desc: "Ideal for online shopping, clothes, small electronics, and documents. Receive your packages in record time.", price_label: "Price per pound starting at:",
-                sea_badge: "Best Price", sea_title: "Sea Shipping", sea_desc: "The best option for large boxes, moves, heavy parts, or appliances. Guaranteed economy.",
+                air_badge: "Fastest", air_title: "Air Shipping", air_desc: "Receive your packages in record time.", price_label: "Price per pound starting at:",
+                sea_badge: "Best Price", sea_title: "Sea Shipping", sea_desc: "Guaranteed economy for large boxes.",
                 testim_title: "What Our Customers Say", faq_title: "Frequently Asked Questions", map_title: "Our Location",
                 map_address_detail: "Find us on the map. We are near UNO Guapinol Gas Station, Granada, Nicaragua.",
                 chat_welcome: "Hello 👋 <br>How can we help you today?", chat_placeholder: "Type your message...",
@@ -659,7 +609,7 @@
                 footer_sun: "Sundays:",
                 footer_closed: "Closed",
                 footer_follow: "Follow Us",
-                footer_rights: "&copy; 2025 Importaciones Mikompra. All rights reserved.",
+                footer_rights: "© 2025 Importaciones Mikompra. All rights reserved.",
                 stat_1_desc: "Packages Delivered",
                 stat_2_desc: "Years of Experience",
                 stat_3_desc: "Departments in Nicaragua",
@@ -667,18 +617,13 @@
             }
         };
 
-        // --- 4. INICIALIZACIÓN ---
         document.addEventListener('DOMContentLoaded', () => {
             applyPromoLogic();
-            if (IS_PROMO_ACTIVE && document.getElementById('stats-container')) {
-               // Iniciar contadores si es necesario
-               counterObserver.observe(document.getElementById('stats-container'));
-            } else if (document.getElementById('stats-container')) {
+            if (document.getElementById('stats-container')) {
                 counterObserver.observe(document.getElementById('stats-container'));
             }
         });
 
-        // --- 5. LÓGICA DE CARRITO MULTI-ITEM ---
         function addItemToList() {
             const selector = document.getElementById('item-estimator');
             const qtyInput = document.getElementById('item-quantity');
@@ -693,19 +638,15 @@
             const name = selectedOption.getAttribute('data-name');
             let qty = parseInt(qtyInput.value);
 
-            // Validar cantidad
             if (isNaN(qty) || qty < 1) { qty = 1; }
 
             const totalItemWeight = unitWeight * qty;
 
-            // Agregar a la lista
             selectedItems.push({ name, unitWeight, qty, totalWeight: totalItemWeight });
 
-            // Actualizar interfaz
             renderItemsList();
             updateTotalWeight();
             
-            // Resetear inputs
             selector.value = "";
             qtyInput.value = "1";
             
@@ -755,14 +696,11 @@
 
         function updateTotalWeight() {
             const weightInput = document.getElementById('weight');
-            
-            // Sumar pesos totales
             const total = selectedItems.reduce((sum, item) => sum + item.totalWeight, 0);
-            const roundedTotal = Math.round(total * 10) / 10; // Redondear 1 decimal
+            const roundedTotal = Math.round(total * 10) / 10; 
 
             weightInput.value = roundedTotal > 0 ? roundedTotal : "";
 
-            // Bloquear input manual si hay items, desbloquear si está vacío
             if (selectedItems.length > 0) {
                 weightInput.setAttribute('readonly', true);
                 weightInput.classList.add('bg-gray-100', 'cursor-not-allowed');
@@ -773,37 +711,31 @@
                 weightInput.classList.add('bg-white');
             }
 
-            calculateShipping(); // Calcular precio automáticamente
+            calculateShipping();
         }
 
-        // --- 6. LÓGICA DE PROMOCIONES Y VISUALIZACIÓN ---
         function applyPromoLogic() {
             const nav = document.getElementById('main-nav');
             const hero = document.getElementById('inicio');
             const banner = document.getElementById('christmas-banner');
             const servicesPromoAlert = document.getElementById('services-promo-alert');
             const calcPromoNote = document.getElementById('calc-promo-note');
-            
             const airPriceDisplay = document.getElementById('air-price-display');
             const seaPriceDisplay = document.getElementById('sea-price-display');
             const methodSelect = document.getElementById('method');
 
             if (IS_PROMO_ACTIVE) {
-                // Activar modo Navidad
-                const bannerHeight = 48; // px
+                const bannerHeight = 48; 
                 banner.classList.remove('hidden');
                 servicesPromoAlert.classList.remove('hidden');
                 calcPromoNote.classList.remove('hidden');
                 
-                // Ajustar margen superior
                 nav.style.top = `${bannerHeight}px`;
                 hero.style.paddingTop = `${bannerHeight + 80}px`;
 
-                // Actualizar HTML de Precios en Servicios
                 airPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-red-600 line-through mr-2 inline-block">$${DEFAULT_AIR_RATE.toFixed(2)}</p><p class="text-4xl font-bold text-brand-blue inline-block">$${PROMO_AIR_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
                 seaPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-red-600 line-through mr-2 inline-block">$${DEFAULT_SEA_RATE.toFixed(2)}</p><p class="text-4xl font-bold text-brand-blue inline-block">$${PROMO_SEA_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
             } else {
-                // Modo Normal
                 banner.classList.add('hidden');
                 servicesPromoAlert.classList.add('hidden');
                 calcPromoNote.classList.add('hidden');
@@ -814,7 +746,6 @@
                 seaPriceDisplay.innerHTML = `<p class="text-4xl font-bold text-brand-blue inline-block">$${DEFAULT_SEA_RATE.toFixed(2)} <span class="text-lg text-gray-500 font-normal">/lb</span></p>`;
             }
 
-            // Actualizar el texto del Select en la calculadora
             if (methodSelect) {
                 methodSelect.querySelector('option[value="air"]').textContent = translations[currentLang].calc_opt_air;
                 methodSelect.querySelector('option[value="sea"]').textContent = translations[currentLang].calc_opt_sea;
@@ -839,16 +770,14 @@
                 }
             });
             document.getElementById('chat-input').placeholder = translations[currentLang]['chat_placeholder'];
-            applyPromoLogic(); // Re-aplicar para actualizar textos dinámicos
+            applyPromoLogic();
         }
 
-        // --- 7. MENÚ MÓVIL ---
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => menu.classList.toggle('hidden'));
         menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
 
-        // --- 8. CÁLCULO AUTOMÁTICO ---
         function calculateShipping() {
             const weightInput = document.getElementById('weight');
             const weight = parseFloat(weightInput.value);
@@ -857,7 +786,6 @@
             const costDisplay = document.getElementById('cost-display');
 
             if (isNaN(weight) || weight <= 0) {
-                // Si está vacío, resetear display a 0
                 costDisplay.textContent = '$0.00';
                 return;
             }
@@ -866,39 +794,30 @@
             const total = weight * rate;
 
             costDisplay.textContent = '$' + total.toFixed(2);
-            
-            // Animación sutil
             resultDiv.classList.remove('hidden');
             resultDiv.classList.add('animate-pulse');
             setTimeout(() => resultDiv.classList.remove('animate-pulse'), 500);
         }
 
-        // --- 9. NOTIFICACIONES TOAST ---
         function showToast(message, colorClass = 'bg-green-600') {
             const toast = document.getElementById('toast-notification');
             const toastMessage = document.getElementById('toast-message');
             
-            // Resetear clases
             toast.className = 'fixed bottom-24 left-1/2 -translate-x-1/2 p-4 text-white rounded-lg shadow-xl z-50 transition-all duration-300 transform opacity-0';
             toast.classList.add(colorClass);
 
-            // Icono dinámico
             const icon = message.includes('⚠️') ? 'fa-triangle-exclamation' : (message.includes('❌') ? 'fa-circle-xmark' : 'fa-check-circle');
-            
             toastMessage.innerHTML = `<i class="fa-solid ${icon} text-2xl mr-3"></i><span class="font-medium text-sm">${message.replace(/❌|✅|⚠️/g, '').trim()}</span>`;
 
-            // Mostrar
             toast.classList.remove('translate-y-full', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
 
-            // Ocultar
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-full', 'opacity-0');
             }, 3000);
         }
 
-        // --- 10. CHAT ---
         function toggleChat() {
             const chatWindow = document.getElementById('chat-window');
             if (chatWindow.classList.contains('hidden')) {
@@ -929,7 +848,6 @@
             toggleChat();
         }
 
-        // --- 11. CONTADOR ANIMADO ---
         function startCounter(el, target) {
             const duration = 2000;
             const step = Math.ceil(target / (duration / 16)); 
@@ -957,9 +875,6 @@
             });
         }, { threshold: 0.5 });
         
-        const statsContainer = document.getElementById('stats-container');
-        if (statsContainer) counterObserver.observe(statsContainer);
-
     </script>
 </body>
 </html>
